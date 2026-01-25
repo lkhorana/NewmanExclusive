@@ -1,0 +1,124 @@
+/* --- 1. CORE VARIABLES --- */
+:root {
+    --gold: #d4af37;
+    --navy: #1a263c; 
+    --white: #ffffff;
+    --cream: #f9fbfb;
+}
+
+/* --- 2. UNIVERSAL RESET --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box !important; 
+}
+
+body, html {
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+/* --- 3. THE HEADER (FIXED LOGO SIZE & ALIGNMENT) --- */
+header.main-header {
+    background-color: var(--navy) !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 5% !important;
+    height: 90px !important;
+    width: 100% !important;
+    position: relative !important; 
+    z-index: 9999 !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.brand-identity {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    text-decoration: none !important;
+}
+
+.logo-area img {
+    height: 65px !important;
+    width: auto !important;
+    max-height: 65px !important;
+    display: block !important;
+}
+
+.brand-name-fancy {
+    font-family: 'Great Vibes', cursive !important;
+    color: var(--gold) !important;
+    font-size: 32px !important;
+    white-space: nowrap !important;
+}
+
+/* --- 4. NAVIGATION --- */
+.nav-links {
+    display: flex !important;
+    list-style: none !important;
+    gap: 25px !important;
+}
+
+.nav-links li a {
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--gold) !important;
+}
+
+/* --- 5. GALLERY FIX (Forces Rendering) --- */
+.gallery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 20px !important;
+    padding: 40px 0 !important;
+    width: 100% !important;
+}
+
+.gallery-item {
+    width: 100% !important;
+    height: 450px !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* --- 6. PAGE CONTENT FIXES --- */
+.section-padding { padding: 100px 0; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+.owner-grid, .booking-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* --- 7. MOBILE FIXES (Now Properly Closed) --- */
+@media (max-width: 1024px) {
+    header.main-header { 
+        flex-direction: column !important; 
+        height: auto !important;
+        padding: 20px 0 !important; 
+    }
+    .brand-identity { 
+        margin-bottom: 15px !important; 
+    }
+    .nav-links { 
+        gap: 12px !important; 
+        flex-wrap: wrap !important; 
+        justify-content: center !important; 
+    }
+    .owner-grid, .booking-split {
+        grid-template-columns: 1fr !important;
+    }
+}

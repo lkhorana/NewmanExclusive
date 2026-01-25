@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Architecture of a Suit: Understanding Canvas | Newman Exclusive</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #d4af37;
+            --navy: #050b1a;
+            --white: #ffffff;
+            --bg-accent: #0a1122;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.8;
+        }
+
+        /* Master Navigation */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            background: var(--navy);
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        .nav-container {
+            width: 95%; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .nav-links {
+            display: flex; list-style: none; gap: 15px; margin: 0; padding: 0;
+        }
+
+        .nav-links li a {
+            color: white; text-decoration: none; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .nav-links li a:hover { color: var(--gold); }
+
+        /* Article Hero */
+        .article-hero {
+            padding: 100px 20px 60px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .category-tag {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+
+        .article-hero h1 {
+            font-family: 'Playfair Display';
+            font-size: 52px;
+            margin: 20px 0;
+            line-height: 1.1;
+            color: var(--gold);
+        }
+
+        .featured-image {
+            width: 100%;
+            max-width: 1100px;
+            height: 60vh;
+            margin: 0 auto 60px;
+            display: block;
+            object-fit: cover;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Content Area */
+        .content-wrapper {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+        }
+
+        .content-wrapper p {
+            font-size: 18px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 30px;
+        }
+
+        .content-wrapper h2 {
+            font-family: 'Playfair Display';
+            color: var(--gold);
+            font-size: 32px;
+            margin: 60px 0 20px;
+        }
+
+        /* Canvas Diagram Placeholder Style */
+        .diagram-box {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--gold);
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        /* CTA Section */
+        .article-footer-cta {
+            background: var(--bg-accent);
+            padding: 80px 40px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            margin-top: 60px;
+        }
+
+        .article-footer-cta h3 {
+            font-family: 'Playfair Display';
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 18px 45px;
+            background: var(--gold);
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .btn-gold:hover {
+            background: #fff;
+            transform: translateY(-3px);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin: 40px 0;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        footer {
+            text-align: center; padding: 60px; font-size: 10px;
+            opacity: 0.4; letter-spacing: 2px; border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .article-hero h1 { font-size: 36px; }
+            .nav-links { display: none; }
+            .featured-image { height: 40vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/Final_Logos_(1).png" alt="Newman" style="height: 35px;"></a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="fabrics.html">Fabrics</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="blogs.html">Journal</a></li>
+                    <li><a href="payment.html">Payment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <article>
+        <section class="article-hero">
+            <span class="category-tag">Technical Insight</span>
+            <h1>The Fuss About Suit Jacket Canvas</h1>
+        </section>
+
+        <img src="images/blogpic6.jpg" class="featured-image" alt="Suit Construction Detail">
+
+        <div class="content-wrapper">
+            <p>Suits come in a variety of styles—formal suits, casual suits, single-breasted, double-breasted—each serving a different purpose and making a unique statement. One crucial element that sets a customized suit jacket apart from ready-made ones is the canvas interlining.</p>
+            
+            <p>This hidden layer, positioned between the outer cloth of the jacket and the inner silk lining, plays a significant role in defining the overall structure of the garment.</p>
+
+            <h2>The Soul of the Jacket</h2>
+            <p>Typically crafted from a blend of horsehair and synthetic fibers for enhanced durability, the canvas interlining provides the customized suit jacket with a more refined and tailored appearance. It is this canvas layer that gives the jacket its shape, ensuring that it drapes elegantly on the wearer's body and maintains its form over time.</p>
+
+            <div class="diagram-box">
+                <p style="color: var(--gold); font-weight: 700; margin-bottom: 0;">SARTORIAL GUIDE:</p>
+                <p style="font-style: italic; font-size: 16px;">"Full Canvas: Superior longevity. Half Canvas: The perfect balance of structure and weight."</p>
+            </div>
+
+            <h2>Half vs. Full Canvas</h2>
+            <p>Moreover, when it comes to canvas interlining, there is a choice between half canvassed and full canvassed jackets. At Newman Exclusive, all suit jackets are half canvassed by default, meaning that the canvas extends from the shoulder down to the waistline.</p>
+            
+            <p>This construction method offers a perfect balance between structure and flexibility, creating a clean and polished look at the top of the jacket while allowing for natural movement and comfort in the lower part.</p>
+
+            <h2>Customization and Preference</h2>
+            <p>However, customers have the option to request a fully canvassed jacket if they desire. Fully canvassed suits are known for their superior quality and longevity, but they also come at a higher price point due to the intricate craftsmanship involved. This customization aspect allows patrons to tailor their suit jackets according to their specific preferences and budget constraints.</p>
+            
+            <p>Do however please note, that if the preference is for lighter feel suits, half canvas is definitely the better option. A simple comparison reveals the basic difference in the Full and half canvassed Suit jackets.</p>
+
+            <p>Whatever your preference, we at Newman Exclusive Tailors are always here to assist you with your clothing needs.</p>
+
+            <div class="article-footer-cta">
+                <h3>Built to Your Standards</h3>
+                <p>Consult with our master tailors to choose the right construction for your next suit.</p>
+                <a href="payment.html" class="btn-gold">Begin Your Order</a>
+            </div>
+
+            <a href="blogs.html" class="back-link">← Back to Journal</a>
+        </div>
+    </article>
+
+    <footer>
+        &copy; 2026 NEWMAN EXCLUSIVE | THE PINNACLE OF BANGKOK TAILORING
+    </footer>
+
+</body>
+</html>

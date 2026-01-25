@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Tailored Outfits: Yay or Nay? | Newman Exclusive</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #d4af37;
+            --navy: #050b1a;
+            --white: #ffffff;
+            --bg-accent: #0a1122;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.8;
+        }
+
+        /* Master Navigation (9 Items) */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            background: var(--navy);
+            position: sticky; top: 0; z-index: 1000;
+        }
+
+        .nav-container {
+            width: 95%; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .nav-links {
+            display: flex; list-style: none; gap: 15px; margin: 0; padding: 0;
+        }
+
+        .nav-links li a {
+            color: white; text-decoration: none; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .nav-links li a:hover { color: var(--gold); }
+
+        /* Article Hero */
+        .article-hero {
+            padding: 100px 20px 60px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .category-tag {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+
+        .article-hero h1 {
+            font-family: 'Playfair Display';
+            font-size: 52px;
+            margin: 20px 0;
+            line-height: 1.1;
+            color: var(--gold);
+        }
+
+        .featured-image {
+            width: 100%;
+            max-width: 1100px;
+            height: 60vh;
+            margin: 0 auto 60px;
+            display: block;
+            object-fit: cover;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Content Area */
+        .content-wrapper {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+        }
+
+        .content-wrapper p {
+            font-size: 18px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 30px;
+        }
+
+        .content-wrapper h2 {
+            font-family: 'Playfair Display';
+            color: var(--gold);
+            font-size: 32px;
+            margin: 60px 0 20px;
+        }
+
+        /* CTA Section */
+        .article-footer-cta {
+            background: var(--bg-accent);
+            padding: 80px 40px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            margin-top: 60px;
+        }
+
+        .article-footer-cta h3 {
+            font-family: 'Playfair Display';
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 18px 45px;
+            background: var(--gold);
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .btn-gold:hover {
+            background: #fff;
+            transform: translateY(-3px);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin: 40px 0;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        footer {
+            text-align: center; padding: 60px; font-size: 10px;
+            opacity: 0.4; letter-spacing: 2px; border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        @media (max-width: 768px) {
+            .article-hero h1 { font-size: 36px; }
+            .nav-links { display: none; }
+            .featured-image { height: 40vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/Final_Logos_(1).png" alt="Newman" style="height: 35px;"></a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="fabrics.html">Fabrics</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="blogs.html">Journal</a></li>
+                    <li><a href="payment.html">Payment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <article>
+        <section class="article-hero">
+            <span class="category-tag">Style Guide</span>
+            <h1>Custom Tailored Outfits: Yay or Nay?</h1>
+        </section>
+
+        <img src="images/blogpic.jpg" class="featured-image" alt="Perfectly Tailored Suit">
+
+        <div class="content-wrapper">
+            <p>The short answer is definitely yay! But specifically why yay is because when it comes to looking and feeling your best, having a custom tailored suit can really make a difference. Imagine slipping into a suit that fits you like a glove—there's something incredibly satisfying about that.</p>
+            
+            <p>Unlike off-the-rack options, which often miss the mark in terms of fit, a tailored suit is crafted specifically for your body and personality. This means you get comfort and style all in one package, boosting your confidence every time you wear it.</p>
+
+            <h2>Expressing Your Individuality</h2>
+            <p>One of the best parts about a custom suit is the chance to express your individuality. You get to choose the fabric, the color, and the details that resonate with you. Want something classic and sophisticated, or maybe a more modern twist? The choice is yours! It’s like wearing a piece of art that reflects who you are.</p>
+
+            <h2>Investing in Quality</h2>
+            <p>Then there’s the quality factor. Custom suits are usually made from high-quality materials that feel great and stand the test of time. You’re not just buying a suit; you’re investing in a piece of clothing that will last, giving you amazing value over the years. Plus, it’s nice to know you’re opting for durability and craftsmanship over the fast fashion cycle.</p>
+
+            <h2>The Power of First Impressions</h2>
+            <p>Let’s not forget how a great suit can shape first impressions. Whether you’re heading to a big meeting, a wedding, or a special event, a well-fitted suit can boost the way others perceive you. It shows that you care about your appearance and are serious about making a good impression.</p>
+
+            <h2>Comfort That Moves With You</h2>
+            <p>Comfort is key, too. A tailor knows how to adjust a suit so it moves with you, not against you. You can say goodbye to that annoying tightness or awkward bunching that comes with ill-fitting suits. When you feel comfortable, you can focus on what really matters—whether that's nailing that big pitch or enjoying a special moment.</p>
+
+            <h2>A Sustainable Choice</h2>
+            <p>Lastly, investing in a custom suit is often more sustainable in the long run. Since it’s designed to last, you won’t need to keep buying new suits every season. It’s more about quality over quantity, and that’s a mindset that’s becoming increasingly important today.</p>
+
+            <p>In short, a custom tailored suit isn’t just about looking sharp; it’s about feeling great and presenting the best version of yourself. So if you’re on the fence about it, think about the difference it could make—both in your wardrobe and your confidence!</p>
+
+            <div class="article-footer-cta">
+                <h3>Say "Yay" to Bespoke</h3>
+                <p>Discover the difference a perfectly fitted suit makes in your life.</p>
+                <a href="payment.html" class="btn-gold">Secure Your Fitting</a>
+            </div>
+
+            <a href="blogs.html" class="back-link">← Back to Journal</a>
+        </div>
+    </article>
+
+    <footer>
+        &copy; 2026 NEWMAN EXCLUSIVE | THE PINNACLE OF BANGKOK TAILORING
+    </footer>
+
+</body>
+</html>

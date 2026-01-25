@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fabrics | Newman Exclusive Bespoke Bangkok</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #d4af37;
+            --navy: #1a263c; /* Matches your brand navy */
+            --white: #ffffff;
+            --dark-gray: #1a1a1a;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* --- FIXED HEADER SYSTEM --- */
+        header.main-header {
+            background-color: var(--navy) !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            padding: 10px 5% !important;
+            height: 90px !important;
+            width: 100% !important;
+            position: relative !important; 
+            z-index: 9999 !important;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .brand-identity {
+            display: flex !important;
+            align-items: center !important;
+            gap: 15px !important;
+            text-decoration: none !important;
+        }
+
+        .logo-area img {
+            height: 65px !important; /* Forces correct size */
+            width: auto !important;
+            display: block !important;
+        }
+
+        .brand-name-fancy {
+            font-family: 'Great Vibes', cursive !important;
+            color: var(--gold) !important;
+            font-size: 32px !important;
+            white-space: nowrap !important;
+        }
+
+        .nav-links {
+            display: flex !important;
+            list-style: none !important;
+            gap: 25px !important;
+            margin: 0; padding: 0;
+            align-items: center;
+        }
+
+        .nav-links li a {
+            color: white !important;
+            text-decoration: none !important;
+            font-size: 11px !important;
+            letter-spacing: 2px !important;
+            text-transform: uppercase !important;
+            font-weight: 700 !important;
+        }
+
+        /* --- CONTENT STYLES --- */
+        .fabric-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                        url('https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80&w=1400') center/cover no-repeat;
+            display: flex; align-items: center; justify-content: center; color: white; text-align: center;
+        }
+
+        .fabric-hero h1 {
+            font-family: 'Playfair Display'; font-size: clamp(40px, 6vw, 75px); letter-spacing: 10px; text-transform: uppercase; margin: 0;
+        }
+
+        .section-padding { padding: 100px 0; }
+        .container { width: 85%; max-width: 1200px; margin: 0 auto; }
+
+        .tag {
+            display: inline-block; color: var(--gold); letter-spacing: 4px; font-weight: 700; font-size: 11px; margin-bottom: 15px; text-transform: uppercase;
+        }
+
+        .category-row {
+            display: flex; align-items: center; gap: 80px; margin-bottom: 100px;
+        }
+
+        .category-row:nth-child(even) { flex-direction: row-reverse; }
+
+        .category-image { flex: 1.2; background: #000; overflow: hidden; }
+        
+        .category-image img { 
+            width: 100%; 
+            height: 500px; 
+            object-fit: cover; 
+            display: block;
+            filter: brightness(0.8);
+            transition: 0.5s;
+        }
+        
+        .category-image img:hover { filter: brightness(1); transform: scale(1.02); }
+
+        .category-info { flex: 1; }
+        .category-info h3 { font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 20px; color: var(--navy); }
+        .category-info p { font-size: 17px; color: #555; }
+
+        .fabric-cta { background: var(--navy); color: white; text-align: center; padding: 100px 20px; }
+        .btn-gold { padding: 20px 50px; background: var(--gold); color: white; text-decoration: none; font-weight: 700; letter-spacing: 3px; display: inline-block; transition: 0.3s; }
+        .btn-gold:hover { background: #b8952d; }
+
+        @media (max-width: 1024px) {
+            header.main-header { flex-direction: column !important; height: auto !important; padding: 20px 0 !important; }
+            .brand-identity { margin-bottom: 15px !important; }
+            .nav-links { gap: 15px !important; flex-wrap: wrap !important; justify-content: center !important; }
+            .category-row, .category-row:nth-child(even) { flex-direction: column; gap: 40px; text-align: center; }
+            .category-image img { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="brand-identity">
+            <div class="logo-area">
+                <img src="images/Final_Logos_(1).png" alt="Newman Exclusive Logo">
+            </div>
+            <span class="brand-name-fancy">Newman Exclusive</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="fabrics.html">Fabrics</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="blogs.html">Journal</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="fabric-hero">
+            <div class="container">
+                <span class="tag" style="color: white;">Sartorial Heritage</span>
+                <h1>The Curation</h1>
+            </div>
+        </section>
+
+        <section class="section-padding container">
+            <div class="category-row">
+                <div class="category-image">
+                    <img src="images/fabrics.jpg" alt="Bespoke workshop wools">
+                </div>
+                <div class="category-info">
+                    <span class="tag">The Business Standard</span>
+                    <h3>Four-Season Wools</h3>
+                    <p>Designed for the global traveler. Our Super 130s and 150s wools from Loro Piana and V.B.C. offer incredible recovery and breathability.</p>
+                </div>
+            </div>
+
+            <div class="category-row">
+                <div class="category-image">
+                    <img src="images/linen.jpg" alt="Pure linen fabric">
+                </div>
+                <div class="category-info">
+                    <span class="tag">Refined Leisure</span>
+                    <h3>Pure Irish Linens</h3>
+                    <p>Experience the effortless elegance of Irish linen. Hand-cut and crafted for tropical sophistication and timeless style.</p>
+                </div>
+            </div>
+
+            <div class="category-row">
+                <div class="category-image">
+                    <img src="images/customization.jpg" alt="Tailoring consultation">
+                </div>
+                <div class="category-info">
+                    <span class="tag">Mastered Selection</span>
+                    <h3>Personalized Consultation</h3>
+                    <p>The choice of fabric is a personal journey. Sam Khorana provides one-on-one guidance to find the cloth that perfectly aligns with your physique and lifestyle.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="fabric-cta">
+            <div class="container">
+                <h2 style="font-family: 'Playfair Display'; font-size: 42px; margin-bottom: 30px;">Feel the Quality.</h2>
+                <a href="index.html#booking" class="btn-gold">REQUEST A CONSULTATION</a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #02060f; color: white; padding: 80px 0; text-align: center;">
+        <h2 style="font-family: 'Playfair Display'; color: var(--gold); letter-spacing: 4px;">NEWMAN EXCLUSIVE</h2>
+        <p style="opacity: 0.3; font-size: 11px; margin-top: 50px;">&copy; 2026 Newman Exclusive. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
