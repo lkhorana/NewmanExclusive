@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Newman Exclusive Bespoke</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #d4af37;
+            --navy: #1a263c; 
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box !important; }
+        body { font-family: 'Roboto', sans-serif; overflow-x: hidden; background: #fff; }
+
+        /* --- UNIVERSAL NAVIGATION STANDARD --- */
+        header.main-header {
+            background-color: var(--navy) !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            padding: 0 5% !important;
+            min-height: 90px !important;
+            height: auto !important;
+            width: 100% !important;
+            position: sticky; top: 0; z-index: 9999 !important;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .brand-identity { display: flex !important; align-items: center !important; gap: 15px !important; text-decoration: none !important; flex-shrink: 0 !important; }
+        .logo-area img { height: 65px !important; width: auto !important; display: block !important; }
+        .brand-name-fancy { font-family: 'Great Vibes', cursive !important; color: var(--gold) !important; font-size: 32px !important; white-space: nowrap !important; }
+
+        .nav-links { display: flex !important; list-style: none !important; gap: 20px !important; flex-wrap: wrap !important; justify-content: center !important; padding: 10px 0 !important; }
+        .nav-links li a { color: white !important; text-decoration: none !important; font-size: 11px !important; letter-spacing: 2px !important; text-transform: uppercase !important; font-weight: 700 !important; }
+
+        /* --- CONTACT CONTENT --- */
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 90vh;
+        }
+
+        .contact-info-panel {
+            flex: 1.2;
+            min-width: 450px;
+            padding: 60px 5%;
+            background: #fdfdfd;
+            border-right: 1px solid #f0f0f0;
+        }
+
+        .contact-form-panel {
+            flex: 1;
+            min-width: 400px;
+            padding: 60px 5%;
+            background: #fff;
+        }
+
+        .info-header h2 {
+            font-family: 'Playfair Display';
+            font-size: 48px;
+            color: #050b1a;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .address-text {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .detail-item h4 {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .map-box {
+            width: 100%;
+            height: 350px;
+            border: 1px solid #eee;
+            margin-top: 20px;
+            background: #eee;
+        }
+
+        .directions-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--navy);
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .directions-btn:hover { background: var(--gold); }
+
+        /* Form styling */
+        .luxury-form label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 5px;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        .luxury-form input, .luxury-form select, .luxury-form textarea {
+            width: 100%;
+            padding: 12px 0;
+            margin-bottom: 35px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            font-family: 'Roboto';
+            font-size: 16px;
+            background: transparent;
+            border-radius: 0;
+            outline: none;
+        }
+
+        .luxury-form input:focus, .luxury-form select:focus, .luxury-form textarea:focus {
+            border-bottom: 1px solid #050b1a;
+        }
+
+        .submit-btn {
+            background: #050b1a;
+            color: #fff;
+            padding: 20px 60px;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover { background: var(--gold); }
+
+        /* --- NAVIGATION MOBILE FIX --- */
+        @media (max-width: 1024px) {
+            header.main-header { flex-direction: column !important; padding: 15px 0 !important; }
+            .brand-identity { margin-bottom: 5px !important; }
+            .nav-links { gap: 10px 15px !important; padding: 5px 5% !important; }
+        }
+
+        @media (max-width: 900px) {
+            .contact-info-panel, .contact-form-panel { min-width: 100%; padding: 40px 20px; }
+            .info-header h2 { font-size: 36px; }
+            .details-grid { grid-template-columns: 1fr; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="brand-identity">
+            <div class="logo-area">
+                <img src="images/Final_Logos_(1).png" alt="Newman Exclusive Logo">
+            </div>
+            <span class="brand-name-fancy">Newman Exclusive</span>
+        </a>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="fabrics.html">Fabrics</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="blogs.html">Journal</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="contact-section">
+        
+        <section class="contact-info-panel">
+            <div class="info-header">
+                <h2>Contact Us</h2>
+                <p class="address-text">
+                    <strong>InterContinental Hotel, Unit L.16</strong><br>
+                    973 Phloen Chit Rd, Lumphini, Pathum Wan,<br> 
+                    Bangkok 10330
+                </p>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h4>Phone</h4>
+                    <p><a href="tel:+66879163808" style="color: inherit; text-decoration: none;">+66 87 916 3808</a></p>
+                </div>
+                <div class="detail-item">
+                    <h4>Email</h4>
+                    <p><a href="mailto:team@newmanexclusive.com" style="color: inherit; text-decoration: none;">team@newmanexclusive.com</a></p>
+                </div>
+                <div class="detail-item">
+                    <h4>Mon – Sat</h4>
+                    <p>8:00 AM – 9:00 PM</p>
+                </div>
+                <div class="detail-item">
+                    <h4>Sunday</h4>
+                    <p>8:30 AM – 6:30 PM</p>
+                </div>
+            </div>
+
+            <div class="social-links-row" style="margin-top: 35px; display: flex; align-items: center; gap: 25px; flex-wrap: wrap;">
+                <a href="https://www.instagram.com/newman_exclusive" target="_blank" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #333; transition: 0.3s;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='#333'">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.28.058 1.688.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    <span style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px;">INSTAGRAM</span>
+                </a>
+            
+                <a href="https://www.tiktok.com/@newman_exclusive" target="_blank" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #333; transition: 0.3s;" onmouseover="this.style.color='#000'" onmouseout="this.style.color='#333'">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.36-.67.45-1.05 1.24-1.12 2.04-.03.88.35 1.76 1.05 2.29.7.53 1.65.69 2.51.42.81-.23 1.48-.87 1.78-1.66.19-.51.24-1.06.22-1.6-.03-4.25-.01-8.5-.02-12.75z"/></svg>
+                    <span style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px;">TIKTOK</span>
+                </a>
+            
+                <a href="https://www.facebook.com/newmanexclusive" target="_blank" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #333; transition: 0.3s;" onmouseover="this.style.color='#1877F2'" onmouseout="this.style.color='#333'">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    <span style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px;">FACEBOOK</span>
+                </a>
+            </div>
+
+            <div class="map-box">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0" 
+                    loading="lazy" 
+                    allowfullscreen 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.568324687258!2d100.53859817585094!3d13.744577886646545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ed800000001%3A0x6a0c5c6351834907!2sInterContinental%20Bangkok%2C%20an%20IHG%20Hotel!5e0!3m2!1sen!2sth!4v1700000000000!5m2!1sen!2sth">
+                </iframe>
+            </div>
+            <a href="https://maps.app.goo.gl/9y5y6X9jR6vF8p1P8" target="_blank" class="directions-btn">Get Directions on Google Maps</a>
+        </section>
+
+        <section class="contact-form-panel">
+            <h3 style="font-family: 'Playfair Display'; font-size: 28px; margin-bottom: 40px; text-transform: uppercase;">Direct Inquiry</h3>
+            <form action="https://formspree.io/f/mqeezwan" method="POST" class="luxury-form">
+                
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="_replyto" required>
+                
+                <label for="phone">Phone / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="service">Interested In</label>
+                <select id="service" name="service" required>
+                    <option value="" disabled selected>Please select...</option>
+                    <option value="Business Suit">Business Suit</option>
+                    <option value="Wedding Tuxedo">Wedding Tuxedo</option>
+                    <option value="Custom Shirts">Custom Shirts</option>
+                    <option value="Other">Other Inquiry</option>
+                </select>
+
+                <label for="message">How can we help you?</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer style="background: #050b1a; color: white; padding: 40px 0; text-align: center;">
+        <p style="opacity: 0.6; font-size: 12px;">© 2026 Newman Exclusive Bespoke Tailors.</p>
+    </footer>
+
+</body>
+</html>

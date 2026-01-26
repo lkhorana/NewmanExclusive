@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bespoke Services | Newman Exclusive Bangkok</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #d4af37;
+            --navy: #1a263c; 
+            --white: #ffffff;
+            --dark-bg: #050b1a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box !important; }
+        body { font-family: 'Roboto', sans-serif; background: #fff; color: #333; overflow-x: hidden; }
+
+        /* --- UNIVERSAL NAVIGATION STANDARD --- */
+        header.main-header {
+            background-color: var(--navy) !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            padding: 0 5% !important;
+            min-height: 90px !important;
+            height: auto !important;
+            width: 100% !important;
+            position: sticky; top: 0; z-index: 9999 !important;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .brand-identity { display: flex !important; align-items: center !important; gap: 15px !important; text-decoration: none !important; flex-shrink: 0 !important; }
+        .logo-area img { height: 65px !important; width: auto !important; display: block !important; }
+        .brand-name-fancy { font-family: 'Great Vibes', cursive !important; color: var(--gold) !important; font-size: 32px !important; white-space: nowrap !important; }
+
+        .nav-links { display: flex !important; list-style: none !important; gap: 20px !important; flex-wrap: wrap !important; justify-content: center !important; padding: 10px 0 !important; }
+        .nav-links li a { color: white !important; text-decoration: none !important; font-size: 11px !important; letter-spacing: 2px !important; text-transform: uppercase !important; font-weight: 700 !important; }
+
+        /* Modern Editorial Grid Styling */
+        .services-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            row-gap: 80px;
+        }
+
+        .service-tile {
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4 / 5;
+            background: #f4f4f4;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .service-tile:hover .image-container img {
+            transform: scale(1.05);
+        }
+
+        .service-meta {
+            padding-top: 25px;
+            position: relative;
+        }
+
+        .service-meta span {
+            font-family: 'Roboto';
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: #d4af37;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .service-meta h3 {
+            font-family: 'Playfair Display';
+            font-size: 28px;
+            margin: 10px 0;
+            color: #050b1a;
+            text-transform: uppercase;
+        }
+
+        .service-meta p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            max-width: 90% ;
+        }
+
+        .enquire-link {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #d4af37;
+            padding-bottom: 2px;
+            color: #050b1a;
+        }
+
+        .services-hero {
+            background: #050b1a;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .services-hero h1 {
+            font-family: 'Playfair Display';
+            font-size: 54px;
+            margin-bottom: 15px;
+        }
+
+        .services-hero p {
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* --- MOBILE REFINEMENT --- */
+        @media (max-width: 1024px) {
+            header.main-header { flex-direction: column !important; padding: 15px 0 !important; }
+            .brand-identity { margin-bottom: 5px !important; }
+            .nav-links { gap: 10px 15px !important; padding: 5px 5% !important; }
+        }
+
+        @media (max-width: 850px) {
+            .editorial-grid { grid-template-columns: 1fr; gap: 60px; }
+            .service-tile { margin-top: 0 !important; } /* Reset the desktop staggered margin */
+            .services-hero h1 { font-size: 40px; }
+            .services-wrapper { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="brand-identity">
+            <div class="logo-area">
+                <img src="images/Final_Logos_(1).png" alt="Newman Exclusive Logo">
+            </div>
+            <span class="brand-name-fancy">Newman Exclusive</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="fabrics.html">Fabrics</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="blogs.html">Journal</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="services-hero">
+            <div class="container">
+                <h1>OUR CAPABILITIES</h1>
+                <p>Excellence in every stitch, from boardroom to ballroom.</p>
+            </div>
+        </section>
+
+        <section class="services-wrapper">
+            <div class="editorial-grid">
+                
+                <a href="contact.html" class="service-tile">
+                    <div class="image-container">
+                        <img src="images/mens_formal.jpg" alt="Men's Formal Bespoke">
+                    </div>
+                    <div class="service-meta">
+                        <span>The Executive Collection</span>
+                        <h3>Men's Formal Attire</h3>
+                        <p>Timeless business suits, custom shirts, and tailored trousers engineered for a flawless professional presence.</p>
+                        <div class="enquire-link">Enquire for Fitting</div>
+                    </div>
+                </a>
+
+                <a href="contact.html" class="service-tile" style="margin-top: 50px;"> 
+                    <div class="image-container">
+                        <img src="images/black_tie.jpg" alt="Black Tie Attire">
+                    </div>
+                    <div class="service-meta">
+                        <span>Ceremony & Evening</span>
+                        <h3>Black Tie Attire</h3>
+                        <p>The pinnacle of occasion wear. Commission a bespoke tuxedo or dinner jacket crafted from luxurious silks and wools.</p>
+                        <div class="enquire-link">Enquire for Fitting</div>
+                    </div>
+                </a>
+
+                <a href="contact.html" class="service-tile">
+                    <div class="image-container">
+                        <img src="images/womens_formal.jpg" alt="Women's Formal Attire">
+                    </div>
+                    <div class="service-meta">
+                        <span>Contemporary Tailoring</span>
+                        <h3>Women's Formal Attire</h3>
+                        <p>Tailored excellence for the modern woman. We specialize in custom power suits, elegant blazers, and sophisticated formal wear.</p>
+                        <div class="enquire-link">Enquire for Fitting</div>
+                    </div>
+                </a>
+
+                <a href="contact.html" class="service-tile" style="margin-top: 50px;">
+                    <div class="image-container">
+                        <img src="images/custom_casual.jpg" alt="Custom Casual Tailoring">
+                    </div>
+                    <div class="service-meta">
+                        <span>Refined Leisure</span>
+                        <h3>Custom Casual Attire</h3>
+                        <p>Bespoke comfort and style. Elevate your weekend wardrobe with custom denim, high-quality chinos, and sports jackets.</p>
+                        <div class="enquire-link">Enquire for Fitting</div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section style="background: #fdfaf5; padding: 100px 20px; text-align: center;">
+            <div class="container">
+                <h2 style="font-family: 'Playfair Display'; font-size: 32px; margin-bottom: 20px;">Beyond the Suit</h2>
+                <p style="max-width: 600px; margin: 0 auto 30px; line-height: 1.8;">All Newman Exclusive garments include complimentary lifetime alterations and worldwide shipping options to our international clients.</p>
+                <a href="contact.html" style="background: #050b1a; color: white; padding: 15px 35px; text-decoration: none; font-weight: 700; letter-spacing: 2px; font-size: 11px; text-transform: uppercase;">START YOUR CUSTOM ORDER</a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #050b1a; color: white; padding: 60px 0; text-align: center;">
+        <div class="container">
+            <h2 style="color: #d4af37; margin-bottom: 20px; font-family: 'Playfair Display';">NEWMAN EXCLUSIVE</h2>
+            <p>InterContinental Bangkok | +66 87 916 3808</p>
+            <div style="margin-top: 30px; opacity: 0.5; font-size: 12px;">
+                &copy; 2026 Newman Exclusive. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
