@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Newman Exclusive Bespoke</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #d4af37;
+            --navy: #1a263c; 
+            --white: #ffffff;
+            --dark-bg: #050b1a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box !important; }
+        body { font-family: 'Roboto', sans-serif; overflow-x: hidden; background: #fff; color: #333; }
+
+        /* --- NAVIGATION --- */
+        header.main-header {
+            background-color: var(--navy) !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            padding: 0 5% !important;
+            min-height: 90px !important;
+            height: auto !important;
+            width: 100% !important;
+            position: sticky; top: 0; z-index: 9999 !important;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .brand-identity { display: flex !important; align-items: center !important; gap: 15px !important; text-decoration: none !important; }
+        .logo-area img { height: 65px !important; width: auto !important; display: block !important; }
+        .brand-name-fancy { font-family: 'Great Vibes', cursive !important; color: var(--gold) !important; font-size: 32px !important; }
+
+        .nav-links { display: flex !important; list-style: none !important; gap: 20px !important; flex-wrap: wrap !important; justify-content: center !important; }
+        .nav-links li a { color: white !important; text-decoration: none !important; font-size: 11px !important; letter-spacing: 2px !important; text-transform: uppercase !important; font-weight: 700 !important; }
+
+        /* --- CONTACT LAYOUT --- */
+        .contact-section { display: flex; flex-wrap: wrap; min-height: 90vh; }
+        .contact-info-panel { flex: 1.2; min-width: 450px; padding: 60px 5%; background: #fdfdfd; border-right: 1px solid #f0f0f0; }
+        .contact-form-panel { flex: 1; min-width: 400px; padding: 60px 5%; background: #fff; }
+
+        .info-header h2 { font-family: 'Playfair Display'; font-size: 48px; color: #050b1a; margin-bottom: 20px; text-transform: uppercase; }
+        .address-text { font-size: 18px; line-height: 1.6; margin-bottom: 40px; color: #333; }
+
+        .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 50px; }
+        .detail-item h4 { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 12px; margin-bottom: 8px; font-weight: 700; }
+
+        .map-box { width: 100%; height: 350px; border: 1px solid #eee; margin-top: 20px; }
+        .directions-btn { display: block; width: 100%; text-align: center; background: var(--navy); color: white; text-decoration: none; padding: 12px; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-top: 10px; transition: 0.3s; }
+        .directions-btn:hover { background: var(--gold); }
+
+        /* --- FORM --- */
+        .luxury-form label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 5px; color: #888; text-transform: uppercase; }
+        .luxury-form input, .luxury-form select, .luxury-form textarea { width: 100%; padding: 12px 0; margin-bottom: 35px; border: none; border-bottom: 1px solid #ddd; font-family: 'Roboto'; font-size: 16px; outline: none; }
+        .submit-btn { background: #050b1a; color: #fff; padding: 20px 60px; border: none; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; cursor: pointer; width: 100%; transition: 0.3s; }
+        .submit-btn:hover { background: var(--gold); }
+
+        @media (max-width: 1024px) {
+            header.main-header { flex-direction: column !important; padding: 15px 0 !important; }
+            .contact-info-panel, .contact-form-panel { min-width: 100%; padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="brand-identity">
+            <div class="logo-area"><img src="images/Final_Logos_(1).png" alt="Logo"></div>
+            <span class="brand-name-fancy">Newman Exclusive</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="fabrics.html">Fabrics</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="blogs.html">Journal</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="contact-section">
+        <section class="contact-info-panel">
+            <div class="info-header">
+                <h2>Contact Us</h2>
+                <p class="address-text">
+                    <strong>InterContinental Hotel, Unit L.16</strong><br>
+                    973 Phloen Chit Rd, Lumphini, Pathum Wan,<br> 
+                    Bangkok 10330
+                </p>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-item"><h4>Phone</h4><p>+66 87 916 3808</p></div>
+                <div class="detail-item"><h4>Email</h4><p>team@newmanexclusive.com</p></div>
+                <div class="detail-item"><h4>Mon – Sat</h4><p>8:00 AM – 9:00 PM</p></div>
+                <div class="detail-item"><h4>Sunday</h4><p>8:30 AM – 6:30 PM</p></div>
+            </div>
+
+            <div class="map-box">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0" 
+                    loading="lazy" 
+                    allowfullscreen 
+                    src="https://www.google.com/maps/embed/v1/place?key=REPLACE_WITH_YOUR_API_KEY&q=Newman+Exclusive+Bespoke+Tailors+InterContinental+Bangkok">
+                </iframe>
+                <script>
+                    // Alternative for immediate fix without API key:
+                    document.querySelector('iframe').src = "https://maps.google.com/maps?q=Newman%20Exclusive%20Bespoke%20Tailors%20Bangkok&t=&z=15&ie=UTF8&iwloc=&output=embed";
+                </script>
+            </div>
+            <a href="https://goo.gl/maps/YourActualPlaceIDLink" target="_blank" class="directions-btn">Open in Google Maps</a>
+        </section>
+
+        <section class="contact-form-panel">
+            <h3 style="font-family: 'Playfair Display'; font-size: 28px; margin-bottom: 40px;">DIRECT INQUIRY</h3>
+            <form action="https://formspree.io/f/mqeezwan" method="POST" class="luxury-form">
+                <label for="name">Full Name</label><input type="text" id="name" name="name" required>
+                <label for="email">Email</label><input type="email" id="email" name="_replyto" required>
+                <label for="phone">Phone / WhatsApp</label><input type="tel" id="phone" name="phone" required>
+                <label for="service">Service</label>
+                <select id="service" name="service" required>
+                    <option value="Business Suit">Business Suit</option>
+                    <option value="Wedding Tuxedo">Wedding Tuxedo</option>
+                    <option value="Other">Other Inquiry</option>
+                </select>
+                <label for="message">Message</label><textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer style="background: #050b1a; color: white; padding: 40px 0; text-align: center;">
+        <p style="opacity: 0.6; font-size: 12px;">© 2026 Newman Exclusive Bespoke Tailors.</p>
+    </footer>
+
+</body>
+</html>
