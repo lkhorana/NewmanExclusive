@@ -1,0 +1,477 @@
+diff --git a/about.html b/about.html
+index 42336c7..d6e4497 100644
+--- a/about.html
++++ b/about.html
+@@ -3,7 +3,14 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>The Heritage | Newman Exclusive Bespoke</title>
++    <title>The Heritage | Newman Exclusive Bespoke Tailoring Bangkok</title>
++    <meta name="description" content="Meet Sam Khorana, Master Tailor with 30+ years of bespoke craftsmanship in Bangkok. Discover the heritage and artistry behind Newman Exclusive.">
++    <link rel="canonical" href="https://www.newmanexclusive.com/about.html">
++    <meta property="og:title" content="The Heritage | Newman Exclusive Bespoke Tailoring Bangkok">
++    <meta property="og:description" content="Meet Sam Khorana, Master Tailor with 30+ years of bespoke craftsmanship in Bangkok. Discover the heritage and artistry behind Newman Exclusive.">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://www.newmanexclusive.com/about.html">
++    <meta property="og:locale" content="en_TH">
+     
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+@@ -146,6 +153,32 @@
+             .about-hero h1 { font-size: 38px !important; }
+         }
+     </style>
++
++    <script type="application/ld+json">
++    {
++      "@context": "https://schema.org",
++      "@type": "ClothingStore",
++      "name": "Newman Exclusive",
++      "image": "https://www.newmanexclusive.com/images/sam_khorana_business.jpg",
++      "description": "Meet Sam Khorana, Master Tailor with 30+ years of bespoke craftsmanship in Bangkok. Discover the heritage and artistry behind Newman Exclusive.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Unit L.16, President Tower Arcade, InterContinental Bangkok, 973 Phloen Chit Rd",
++        "addressLocality": "Pathum Wan",
++        "addressRegion": "Bangkok",
++        "postalCode": "10330",
++        "addressCountry": "TH"
++      },
++      "telephone": "+66879163808",
++      "email": "team@newmanexclusive.com",
++      "url": "https://www.newmanexclusive.com/about.html",
++      "priceRange": "$$$",
++      "sameAs": [
++        "https://www.instagram.com/newman_exclusive",
++        "https://www.facebook.com/newmanexclusive/"
++      ]
++    }
++    </script>
+ </head>
+ <body>
+     <header class="main-header">
+diff --git a/blogs.html b/blogs.html
+index d04505e..dad643c 100644
+--- a/blogs.html
++++ b/blogs.html
+@@ -3,7 +3,14 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>The Journal | Newman Exclusive Bespoke</title>
++    <title>The Journal | Newman Exclusive Bespoke Tailoring Bangkok</title>
++    <meta name="description" content="Sartorial insights, fabric trends, and bespoke tailoring tips from Newman Exclusive, Bangkok.">
++    <link rel="canonical" href="https://www.newmanexclusive.com/blogs.html">
++    <meta property="og:title" content="The Journal | Newman Exclusive Bespoke Tailoring Bangkok">
++    <meta property="og:description" content="Sartorial insights, fabric trends, and bespoke tailoring tips from Newman Exclusive, Bangkok.">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://www.newmanexclusive.com/blogs.html">
++    <meta property="og:locale" content="en_TH">
+     
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+@@ -98,6 +105,32 @@
+             .journal-container { grid-template-columns: 1fr !important; }
+         }
+     </style>
++
++    <script type="application/ld+json">
++    {
++      "@context": "https://schema.org",
++      "@type": "ClothingStore",
++      "name": "Newman Exclusive",
++      "image": "https://www.newmanexclusive.com/images/sam_khorana_business.jpg",
++      "description": "Sartorial insights, fabric trends, and bespoke tailoring tips from Newman Exclusive, Bangkok.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Unit L.16, President Tower Arcade, InterContinental Bangkok, 973 Phloen Chit Rd",
++        "addressLocality": "Pathum Wan",
++        "addressRegion": "Bangkok",
++        "postalCode": "10330",
++        "addressCountry": "TH"
++      },
++      "telephone": "+66879163808",
++      "email": "team@newmanexclusive.com",
++      "url": "https://www.newmanexclusive.com/blogs.html",
++      "priceRange": "$$$",
++      "sameAs": [
++        "https://www.instagram.com/newman_exclusive",
++        "https://www.facebook.com/newmanexclusive/"
++      ]
++    }
++    </script>
+ </head>
+ <body>
+ 
+diff --git a/contact.html b/contact.html
+index daae9bd..a84c32a 100644
+--- a/contact.html
++++ b/contact.html
+@@ -3,7 +3,14 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Contact Us | Newman Exclusive Bespoke</title>
++    <title>Contact Us | Newman Exclusive Bespoke Tailor, Bangkok</title>
++    <meta name="description" content="Visit Newman Exclusive at InterContinental Bangkok, Unit L.16, Pathum Wan. WhatsApp +66 87 916 3808 to book your bespoke fitting today.">
++    <link rel="canonical" href="https://www.newmanexclusive.com/contact.html">
++    <meta property="og:title" content="Contact Us | Newman Exclusive Bespoke Tailor, Bangkok">
++    <meta property="og:description" content="Visit Newman Exclusive at InterContinental Bangkok, Unit L.16, Pathum Wan. WhatsApp +66 87 916 3808 to book your bespoke fitting today.">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://www.newmanexclusive.com/contact.html">
++    <meta property="og:locale" content="en_TH">
+     
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+@@ -66,6 +73,32 @@
+             .contact-info-panel, .contact-form-panel { min-width: 100%; padding: 40px 20px; }
+         }
+     </style>
++
++    <script type="application/ld+json">
++    {
++      "@context": "https://schema.org",
++      "@type": "ClothingStore",
++      "name": "Newman Exclusive",
++      "image": "https://www.newmanexclusive.com/images/sam_khorana_business.jpg",
++      "description": "Visit Newman Exclusive at InterContinental Bangkok, Unit L.16, Pathum Wan. WhatsApp +66 87 916 3808 to book your bespoke fitting today.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Unit L.16, President Tower Arcade, InterContinental Bangkok, 973 Phloen Chit Rd",
++        "addressLocality": "Pathum Wan",
++        "addressRegion": "Bangkok",
++        "postalCode": "10330",
++        "addressCountry": "TH"
++      },
++      "telephone": "+66879163808",
++      "email": "team@newmanexclusive.com",
++      "url": "https://www.newmanexclusive.com/contact.html",
++      "priceRange": "$$$",
++      "sameAs": [
++        "https://www.instagram.com/newman_exclusive",
++        "https://www.facebook.com/newmanexclusive/"
++      ]
++    }
++    </script>
+ </head>
+ <body>
+ 
+diff --git a/fabrics.html b/fabrics.html
+index 8553566..939b678 100644
+--- a/fabrics.html
++++ b/fabrics.html
+@@ -3,7 +3,14 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>The Fabrics | Newman Exclusive Bespoke Bangkok</title>
++    <title>The Fabrics | Newman Exclusive Bespoke Tailoring Bangkok</title>
++    <meta name="description" content="Browse premium fabrics for your bespoke suit in Bangkok, from breathable tropical wools to fine cottons, sourced for Newman Exclusive's custom tailoring.">
++    <link rel="canonical" href="https://www.newmanexclusive.com/fabrics.html">
++    <meta property="og:title" content="The Fabrics | Newman Exclusive Bespoke Tailoring Bangkok">
++    <meta property="og:description" content="Browse premium fabrics for your bespoke suit in Bangkok, from breathable tropical wools to fine cottons, sourced for Newman Exclusive's custom tailoring.">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://www.newmanexclusive.com/fabrics.html">
++    <meta property="og:locale" content="en_TH">
+     
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+@@ -131,6 +138,32 @@
+             .category-image img { height: 350px; }
+         }
+     </style>
++
++    <script type="application/ld+json">
++    {
++      "@context": "https://schema.org",
++      "@type": "ClothingStore",
++      "name": "Newman Exclusive",
++      "image": "https://www.newmanexclusive.com/images/sam_khorana_business.jpg",
++      "description": "Browse premium fabrics for your bespoke suit in Bangkok, from breathable tropical wools to fine cottons, sourced for Newman Exclusive's custom tailoring.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Unit L.16, President Tower Arcade, InterContinental Bangkok, 973 Phloen Chit Rd",
++        "addressLocality": "Pathum Wan",
++        "addressRegion": "Bangkok",
++        "postalCode": "10330",
++        "addressCountry": "TH"
++      },
++      "telephone": "+66879163808",
++      "email": "team@newmanexclusive.com",
++      "url": "https://www.newmanexclusive.com/fabrics.html",
++      "priceRange": "$$$",
++      "sameAs": [
++        "https://www.instagram.com/newman_exclusive",
++        "https://www.facebook.com/newmanexclusive/"
++      ]
++    }
++    </script>
+ </head>
+ <body>
+ 
+diff --git a/gallery.html b/gallery.html
+index a5c9624..0e68a52 100644
+--- a/gallery.html
++++ b/gallery.html
+@@ -3,7 +3,14 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>The Portfolio | Newman Exclusive Bespoke</title>
++    <title>The Portfolio | Newman Exclusive Bespoke Tailoring Bangkok</title>
++    <meta name="description" content="See bespoke suits, shirts, and tailoring craftsmanship from Newman Exclusive, Bangkok's trusted custom tailor since 1994.">
++    <link rel="canonical" href="https://www.newmanexclusive.com/gallery.html">
++    <meta property="og:title" content="The Portfolio | Newman Exclusive Bespoke Tailoring Bangkok">
++    <meta property="og:description" content="See bespoke suits, shirts, and tailoring craftsmanship from Newman Exclusive, Bangkok's trusted custom tailor since 1994.">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://www.newmanexclusive.com/gallery.html">
++    <meta property="og:locale" content="en_TH">
+     
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+@@ -152,6 +159,32 @@
+ 
+ 
+     </style>
++
++    <script type="application/ld+json">
++    {
++      "@context": "https://schema.org",
++      "@type": "ClothingStore",
++      "name": "Newman Exclusive",
++      "image": "https://www.newmanexclusive.com/images/sam_khorana_business.jpg",
++      "description": "See bespoke suits, shirts, and tailoring craftsmanship from Newman Exclusive, Bangkok's trusted custom tailor since 1994.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Unit L.16, President Tower Arcade, InterContinental Bangkok, 973 Phloen Chit Rd",
++        "addressLocality": "Pathum Wan",
++        "addressRegion": "Bangkok",
++        "postalCode": "10330",
++        "addressCountry": "TH"
++      },
++      "telephone": "+66879163808",
++      "email": "team@newmanexclusive.com",
++      "url": "https://www.newmanexclusive.com/gallery.html",
++      "priceRange": "$$$",
++      "sameAs": [
++        "https://www.instagram.com/newman_exclusive",
++        "https://www.facebook.com/newmanexclusive/"
++      ]
++    }
++    </script>
+ </head>
+ <body>
+ 
+diff --git a/index.html b/index.html
+index 02a899f..2ee6a00 100644
+--- a/index.html
++++ b/index.html
+@@ -3,7 +3,14 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Newman Exclusive | Bespoke Tailoring Bangkok</title>
++    <title>Bespoke Tailoring Bangkok | Custom Suits at InterContinental | Newman Exclusive</title>
++    <meta name="description" content="Bespoke tailoring in Bangkok since 1994. Master Tailor Sam Khorana crafts custom suits, shirts, and trousers at InterContinental Bangkok, Pathum Wan. Trusted by clients from Singapore and beyond.">
++    <link rel="canonical" href="https://www.newmanexclusive.com/">
++    <meta property="og:title" content="Bespoke Tailoring Bangkok | Custom Suits at InterContinental | Newman Exclusive">
++    <meta property="og:description" content="Bespoke tailoring in Bangkok since 1994. Master Tailor Sam Khorana crafts custom suits, shirts, and trousers at InterContinental Bangkok, Pathum Wan. Trusted by clients from Singapore and beyond.">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://www.newmanexclusive.com/">
++    <meta property="og:locale" content="en_TH">
+     
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+@@ -213,6 +220,32 @@
+             .visual-side { display: none; }
+         }
+     </style>
++
++    <script type="application/ld+json">
++    {
++      "@context": "https://schema.org",
++      "@type": "ClothingStore",
++      "name": "Newman Exclusive",
++      "image": "https://www.newmanexclusive.com/images/sam_khorana_business.jpg",
++      "description": "Bespoke tailoring in Bangkok since 1994. Master Tailor Sam Khorana crafts custom suits, shirts, and trousers at InterContinental Bangkok, Pathum Wan. Trusted by clients from Singapore and beyond.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Unit L.16, President Tower Arcade, InterContinental Bangkok, 973 Phloen Chit Rd",
++        "addressLocality": "Pathum Wan",
++        "addressRegion": "Bangkok",
++        "postalCode": "10330",
++        "addressCountry": "TH"
++      },
++      "telephone": "+66879163808",
++      "email": "team@newmanexclusive.com",
++      "url": "https://www.newmanexclusive.com/",
++      "priceRange": "$$$",
++      "sameAs": [
++        "https://www.instagram.com/newman_exclusive",
++        "https://www.facebook.com/newmanexclusive/"
++      ]
++    }
++    </script>
+ </head>
+ <body>
+ 
+diff --git a/payment.html b/payment.html
+index 6e7b709..91ca035 100644
+--- a/payment.html
++++ b/payment.html
+@@ -3,7 +3,14 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Secure Payment | Newman Exclusive Bespoke</title>
++    <title>Secure Payment | Newman Exclusive Bespoke Tailoring Bangkok</title>
++    <meta name="description" content="Secure payment options for your bespoke order at Newman Exclusive, Bangkok's custom tailoring house.">
++    <link rel="canonical" href="https://www.newmanexclusive.com/payment.html">
++    <meta property="og:title" content="Secure Payment | Newman Exclusive Bespoke Tailoring Bangkok">
++    <meta property="og:description" content="Secure payment options for your bespoke order at Newman Exclusive, Bangkok's custom tailoring house.">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://www.newmanexclusive.com/payment.html">
++    <meta property="og:locale" content="en_TH">
+     
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+@@ -101,6 +108,32 @@
+             header.main-header { height: auto !important; flex-direction: column !important; padding: 20px 0 !important; }
+         }
+     </style>
++
++    <script type="application/ld+json">
++    {
++      "@context": "https://schema.org",
++      "@type": "ClothingStore",
++      "name": "Newman Exclusive",
++      "image": "https://www.newmanexclusive.com/images/sam_khorana_business.jpg",
++      "description": "Secure payment options for your bespoke order at Newman Exclusive, Bangkok's custom tailoring house.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Unit L.16, President Tower Arcade, InterContinental Bangkok, 973 Phloen Chit Rd",
++        "addressLocality": "Pathum Wan",
++        "addressRegion": "Bangkok",
++        "postalCode": "10330",
++        "addressCountry": "TH"
++      },
++      "telephone": "+66879163808",
++      "email": "team@newmanexclusive.com",
++      "url": "https://www.newmanexclusive.com/payment.html",
++      "priceRange": "$$$",
++      "sameAs": [
++        "https://www.instagram.com/newman_exclusive",
++        "https://www.facebook.com/newmanexclusive/"
++      ]
++    }
++    </script>
+ </head>
+ <body>
+ 
+diff --git a/process.html b/process.html
+index eb5e9f3..9f9cb5d 100644
+--- a/process.html
++++ b/process.html
+@@ -3,7 +3,14 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>The Process | Newman Exclusive Bespoke</title>
++    <title>The Process | Newman Exclusive Bespoke Tailoring Bangkok</title>
++    <meta name="description" content="From measurement to final fitting, see how Newman Exclusive's bespoke tailoring process works in Bangkok.">
++    <link rel="canonical" href="https://www.newmanexclusive.com/process.html">
++    <meta property="og:title" content="The Process | Newman Exclusive Bespoke Tailoring Bangkok">
++    <meta property="og:description" content="From measurement to final fitting, see how Newman Exclusive's bespoke tailoring process works in Bangkok.">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://www.newmanexclusive.com/process.html">
++    <meta property="og:locale" content="en_TH">
+     
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+@@ -156,6 +163,32 @@
+             .process-image img { height: 400px; }
+         }
+     </style>
++
++    <script type="application/ld+json">
++    {
++      "@context": "https://schema.org",
++      "@type": "ClothingStore",
++      "name": "Newman Exclusive",
++      "image": "https://www.newmanexclusive.com/images/sam_khorana_business.jpg",
++      "description": "From measurement to final fitting, see how Newman Exclusive's bespoke tailoring process works in Bangkok.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Unit L.16, President Tower Arcade, InterContinental Bangkok, 973 Phloen Chit Rd",
++        "addressLocality": "Pathum Wan",
++        "addressRegion": "Bangkok",
++        "postalCode": "10330",
++        "addressCountry": "TH"
++      },
++      "telephone": "+66879163808",
++      "email": "team@newmanexclusive.com",
++      "url": "https://www.newmanexclusive.com/process.html",
++      "priceRange": "$$$",
++      "sameAs": [
++        "https://www.instagram.com/newman_exclusive",
++        "https://www.facebook.com/newmanexclusive/"
++      ]
++    }
++    </script>
+ </head>
+ <body>
+ 
+diff --git a/services.html b/services.html
+index 3fd6ced..06d24c4 100644
+--- a/services.html
++++ b/services.html
+@@ -3,7 +3,14 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Bespoke Services | Newman Exclusive Bangkok</title>
++    <title>Bespoke Suits, Shirts & Custom Tailoring Services | Newman Exclusive Bangkok</title>
++    <meta name="description" content="Custom-tailored suits, shirts, and trousers in Bangkok. Newman Exclusive offers bespoke fittings at InterContinental Bangkok for locals and travelers alike.">
++    <link rel="canonical" href="https://www.newmanexclusive.com/services.html">
++    <meta property="og:title" content="Bespoke Suits, Shirts & Custom Tailoring Services | Newman Exclusive Bangkok">
++    <meta property="og:description" content="Custom-tailored suits, shirts, and trousers in Bangkok. Newman Exclusive offers bespoke fittings at InterContinental Bangkok for locals and travelers alike.">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://www.newmanexclusive.com/services.html">
++    <meta property="og:locale" content="en_TH">
+     
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+@@ -154,6 +161,32 @@
+             .services-wrapper { padding: 40px 20px; }
+         }
+     </style>
++
++    <script type="application/ld+json">
++    {
++      "@context": "https://schema.org",
++      "@type": "ClothingStore",
++      "name": "Newman Exclusive",
++      "image": "https://www.newmanexclusive.com/images/sam_khorana_business.jpg",
++      "description": "Custom-tailored suits, shirts, and trousers in Bangkok. Newman Exclusive offers bespoke fittings at InterContinental Bangkok for locals and travelers alike.",
++      "address": {
++        "@type": "PostalAddress",
++        "streetAddress": "Unit L.16, President Tower Arcade, InterContinental Bangkok, 973 Phloen Chit Rd",
++        "addressLocality": "Pathum Wan",
++        "addressRegion": "Bangkok",
++        "postalCode": "10330",
++        "addressCountry": "TH"
++      },
++      "telephone": "+66879163808",
++      "email": "team@newmanexclusive.com",
++      "url": "https://www.newmanexclusive.com/services.html",
++      "priceRange": "$$$",
++      "sameAs": [
++        "https://www.instagram.com/newman_exclusive",
++        "https://www.facebook.com/newmanexclusive/"
++      ]
++    }
++    </script>
+ </head>
+ <body>
+ 
