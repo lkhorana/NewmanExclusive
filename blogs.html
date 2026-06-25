@@ -23,30 +23,35 @@
             --dark-bg: #050b1a;
         }
 
+        header.main-header {
+            background-color: var(--navy);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            min-height: 90px;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .brand-identity { display: flex; align-items: center; gap: 15px; text-decoration: none; flex-shrink: 0; }
+        .logo-area img { height: 65px; width: auto; display: block; }
+        .brand-name-fancy { font-family: 'Great Vibes', cursive; color: var(--gold); font-size: 32px; white-space: nowrap; }
+        nav { display: flex; align-items: center; }
+        .nav-links { display: flex; list-style: none; gap: 20px; flex-wrap: nowrap; justify-content: flex-end; padding: 0; margin: 0; }
+        .nav-links li a { color: white; text-decoration: none; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; transition: color 0.3s; }
+        .nav-links li a:hover { color: var(--gold); }
+
+
         * { margin: 0; padding: 0; box-sizing: border-box !important; }
         body { font-family: 'Roboto', sans-serif; background: var(--dark-bg); color: var(--white); overflow-x: hidden; }
 
         /* --- NAVIGATION --- */
-        header.main-header {
-            background-color: var(--navy) !important;
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            padding: 0 5% !important;
-            height: auto !important; /* Changed from 90px to auto to allow wrapping */
-            min-height: 90px !important;
-            width: 100% !important;
-            position: sticky; top: 0; z-index: 9999 !important;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-        }
 
-        .brand-identity { display: flex !important; align-items: center !important; gap: 15px !important; text-decoration: none !important; flex-shrink: 0 !important; }
-        .logo-area img { height: 65px !important; width: auto !important; display: block !important; }
-        .brand-name-fancy { font-family: 'Great Vibes', cursive !important; color: var(--gold) !important; font-size: 32px !important; white-space: nowrap !important; }
 
         /* THE FIX: Added wrap and centering */
-        .nav-links { display: flex !important; list-style: none !important; gap: 20px !important; flex-wrap: wrap !important; justify-content: center !important; padding: 10px 0 !important; }
-        .nav-links li a { color: white !important; text-decoration: none !important; font-size: 11px !important; letter-spacing: 2px !important; text-transform: uppercase !important; font-weight: 700 !important; }
 
         /* --- HERO --- */
         .journal-hero {
@@ -100,7 +105,10 @@
         }
 
         @media (max-width: 1024px) {
-            header.main-header { height: auto !important; flex-direction: column !important; padding: 20px 0 !important; }
+            header.main-header { flex-direction: column; padding: 15px 5%; min-height: auto; }
+            .brand-identity { margin-bottom: 5px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px 15px; padding: 5px 0; }
+
             .newsletter-form { flex-direction: column; }
             .journal-container { grid-template-columns: 1fr !important; }
         }
