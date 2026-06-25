@@ -11,18 +11,32 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.newmanexclusive.com/fabrics.html">
     <meta property="og:locale" content="en_TH">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --gold: #d4af37;
-            --navy: #1a263c; /* Matches your brand navy */
+            --navy: #1a263c;
             --white: #ffffff;
             --dark-gray: #1a1a1a;
         }
 
+        *, *::before, *::after { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: 'Roboto', sans-serif;
+            background: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* ── HEADER — identical to all other pages ── */
         header.main-header {
             background-color: var(--navy);
             display: flex;
@@ -36,78 +50,131 @@
             z-index: 9999;
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
-        .brand-identity { display: flex; align-items: center; gap: 15px; text-decoration: none; flex-shrink: 0; }
+        .brand-identity {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
         .logo-area img { height: 65px; width: auto; display: block; }
-        .brand-name-fancy { font-family: 'Great Vibes', cursive; color: var(--gold); font-size: 32px; white-space: nowrap; }
+        .brand-name-fancy {
+            font-family: 'Great Vibes', cursive;
+            color: var(--gold);
+            font-size: 32px;
+            white-space: nowrap;
+        }
         nav { display: flex; align-items: center; }
-        .nav-links { display: flex; list-style: none; gap: 16px; flex-wrap: nowrap; justify-content: flex-end; padding: 0; margin: 0; }
-        .nav-links li a { color: white; text-decoration: none; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; transition: color 0.3s; }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
         .nav-links li a:hover { color: var(--gold); }
 
-
-        body, html {
-            margin: 0; padding: 0;
-            font-family: 'Roboto', sans-serif;
-            background: var(--white);
-            color: var(--dark-gray);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-
-        }
-
-        /* --- FIXED HEADER SYSTEM --- */
-
-        /* --- CONTENT STYLES --- */
+        /* ── PAGE CONTENT ── */
         .fabric-hero {
             height: 60vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
                         url('https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80&w=1400') center/cover no-repeat;
-            display: flex; align-items: center; justify-content: center; color: white; text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
         }
-
         .fabric-hero h1 {
-            font-family: 'Playfair Display'; font-size: clamp(40px, 6vw, 75px); letter-spacing: 4px; text-transform: uppercase; margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 6vw, 75px);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 0;
         }
 
         .section-padding { padding: 100px 0; }
         .container { width: 85%; max-width: 1200px; margin: 0 auto; }
 
         .tag {
-            display: inline-block; color: var(--gold); letter-spacing: 4px; font-weight: 700; font-size: 11px; margin-bottom: 15px; text-transform: uppercase;
+            display: inline-block;
+            color: var(--gold);
+            letter-spacing: 4px;
+            font-weight: 700;
+            font-size: 11px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
         }
 
         .category-row {
-            display: flex; align-items: center; gap: 80px; margin-bottom: 100px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            margin-bottom: 100px;
         }
-
         .category-row:nth-child(even) { flex-direction: row-reverse; }
 
-        .category-image { flex: 1.2; background: #000; overflow: hidden; }
-        
-        .category-image img { 
-            width: 100%; 
-            height: 500px; 
-            object-fit: cover; 
+        .category-image {
+            flex: 1.2;
+            background: #000;
+            overflow: hidden;
+        }
+        .category-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
             display: block;
             filter: brightness(0.8);
-            transition: 0.5s;
+            transition: filter 0.5s, transform 0.5s;
         }
-        
-        .category-image img:hover { filter: brightness(1); transform: scale(1.02); } html { overflow-x: hidden; }
+        .category-image img:hover {
+            filter: brightness(1);
+            transform: scale(1.02);
+        }
 
         .category-info { flex: 1; }
-        .category-info h3 { font-family: 'Playfair Display'; font-size: 38px; margin-bottom: 20px; color: var(--navy); }
+        .category-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            margin-bottom: 20px;
+            color: var(--navy);
+        }
         .category-info p { font-size: 17px; color: #555; }
 
-        .fabric-cta { background: var(--navy); color: white; text-align: center; padding: 100px 20px; }
-        .btn-gold { padding: 20px 50px; background: var(--gold); color: white; text-decoration: none; font-weight: 700; letter-spacing: 3px; display: inline-block; transition: 0.3s; }
+        .fabric-cta {
+            background: var(--navy);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .btn-gold {
+            padding: 20px 50px;
+            background: var(--gold);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 3px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
         .btn-gold:hover { background: #b8952d; }
 
+        /* ── MOBILE ── */
         @media (max-width: 1024px) {
             header.main-header { flex-direction: column; padding: 15px 5%; min-height: auto; }
             .brand-identity { margin-bottom: 5px; }
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px 15px; padding: 5px 0; }
-
             .category-row, .category-row:nth-child(even) { flex-direction: column; gap: 40px; text-align: center; }
             .category-image img { height: 350px; }
         }
@@ -208,14 +275,14 @@
 
         <section class="fabric-cta">
             <div class="container">
-                <h2 style="font-family: 'Playfair Display'; font-size: 42px; margin-bottom: 30px;">Feel the Quality.</h2>
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 30px;">Feel the Quality.</h2>
                 <a href="index.html#booking" class="btn-gold">REQUEST A CONSULTATION</a>
             </div>
         </section>
     </main>
 
     <footer style="background: #02060f; color: white; padding: 80px 0; text-align: center;">
-        <h2 style="font-family: 'Playfair Display'; color: var(--gold); letter-spacing: 4px;">NEWMAN EXCLUSIVE</h2>
+        <h2 style="font-family: 'Playfair Display', serif; color: var(--gold); letter-spacing: 4px;">NEWMAN EXCLUSIVE</h2>
         <p style="opacity: 0.3; font-size: 11px; margin-top: 50px;">&copy; 2026 Newman Exclusive. All Rights Reserved.</p>
     </footer>
 
