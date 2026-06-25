@@ -34,18 +34,25 @@
             overflow-x: hidden;
         }
 
-        /* --- 3. THE HEADER --- */
-        header {
-            background-color: var(--navy);
-            display: flex;
-            justify-content: space-between; 
-            align-items: center;
-            padding: 10px 5%;
-            width: 100%;
-            position: relative; 
-            z-index: 1000;
+                        header.main-header {
+            background-color: var(--navy) !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            padding: 0 5% !important;
+            min-height: 90px !important;
+            height: auto !important;
+            width: 100% !important;
+            position: sticky; top: 0; z-index: 9999 !important;
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
+        .brand-identity { display: flex !important; align-items: center !important; gap: 15px !important; text-decoration: none !important; flex-shrink: 0 !important; }
+        .logo-area img { height: 65px !important; width: auto !important; display: block !important; }
+        .brand-name-fancy { font-family: 'Great Vibes', cursive !important; color: var(--gold) !important; font-size: 32px !important; white-space: nowrap !important; }
+        .nav-links { display: flex !important; list-style: none !important; gap: 20px !important; flex-wrap: nowrap !important; justify-content: flex-end !important; padding: 0 !important; margin: 0 !important; }
+        .nav-links li a { color: white !important; text-decoration: none !important; font-size: 11px !important; letter-spacing: 2px !important; text-transform: uppercase !important; font-weight: 700 !important; }
+        .nav-links li a:hover { color: var(--gold) !important; }
+        .nav-links li a:hover { color: var(--gold) !important; }
 
         .brand-identity {
             display: flex;
@@ -54,16 +61,12 @@
             text-decoration: none;
         }
 
-        .logo-container img {
-            height: 65px !important; 
-            width: auto !important;
-            display: block;
-        }
+        
 
         .brand-name-fancy {
             font-family: 'Great Vibes', cursive;
             color: var(--gold);
-            font-size: 34px;
+            font-size: 32px !important;
             white-space: nowrap;
         }
 

@@ -27,7 +27,7 @@
         body { font-family: 'Roboto', sans-serif; background: #fff; color: #333; overflow-x: hidden; }
 
         /* --- UNIVERSAL NAVIGATION STANDARD --- */
-        header.main-header {
+                header.main-header {
             background-color: var(--navy) !important;
             display: flex !important;
             justify-content: space-between !important;
@@ -39,13 +39,12 @@
             position: sticky; top: 0; z-index: 9999 !important;
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
-
         .brand-identity { display: flex !important; align-items: center !important; gap: 15px !important; text-decoration: none !important; flex-shrink: 0 !important; }
         .logo-area img { height: 65px !important; width: auto !important; display: block !important; }
         .brand-name-fancy { font-family: 'Great Vibes', cursive !important; color: var(--gold) !important; font-size: 32px !important; white-space: nowrap !important; }
-
-        .nav-links { display: flex !important; list-style: none !important; gap: 20px !important; flex-wrap: wrap !important; justify-content: center !important; padding: 10px 0 !important; }
+        .nav-links { display: flex !important; list-style: none !important; gap: 20px !important; flex-wrap: nowrap !important; justify-content: flex-end !important; padding: 0 !important; margin: 0 !important; }
         .nav-links li a { color: white !important; text-decoration: none !important; font-size: 11px !important; letter-spacing: 2px !important; text-transform: uppercase !important; font-weight: 700 !important; }
+        .nav-links li a:hover { color: var(--gold) !important; }
 
         /* Modern Editorial Grid Styling */
         .services-wrapper {
@@ -149,7 +148,8 @@
 
         /* --- MOBILE REFINEMENT --- */
         @media (max-width: 1024px) {
-            header.main-header { flex-direction: column !important; padding: 15px 0 !important; }
+                        header.main-header { flex-direction: column !important; padding: 15px 5% !important; min-height: auto !important; }
+            .nav-links { flex-wrap: wrap !important; justify-content: center !important; gap: 12px !important; padding: 10px 0 !important; }
             .brand-identity { margin-bottom: 5px !important; }
             .nav-links { gap: 10px 15px !important; padding: 5px 5% !important; }
         }

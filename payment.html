@@ -27,24 +27,24 @@
         body { font-family: 'Roboto', sans-serif; background: var(--dark-bg); color: var(--white); overflow-x: hidden; }
 
         /* --- NAVIGATION (Matches your Journal Page) --- */
-        header.main-header {
+                header.main-header {
             background-color: var(--navy) !important;
             display: flex !important;
             justify-content: space-between !important;
             align-items: center !important;
             padding: 0 5% !important;
             min-height: 90px !important;
+            height: auto !important;
             width: 100% !important;
             position: sticky; top: 0; z-index: 9999 !important;
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
-
         .brand-identity { display: flex !important; align-items: center !important; gap: 15px !important; text-decoration: none !important; flex-shrink: 0 !important; }
         .logo-area img { height: 65px !important; width: auto !important; display: block !important; }
         .brand-name-fancy { font-family: 'Great Vibes', cursive !important; color: var(--gold) !important; font-size: 32px !important; white-space: nowrap !important; }
-
-        .nav-links { display: flex !important; list-style: none !important; gap: 20px !important; flex-wrap: wrap !important; justify-content: center !important; padding: 10px 0 !important; }
+        .nav-links { display: flex !important; list-style: none !important; gap: 20px !important; flex-wrap: nowrap !important; justify-content: flex-end !important; padding: 0 !important; margin: 0 !important; }
         .nav-links li a { color: white !important; text-decoration: none !important; font-size: 11px !important; letter-spacing: 2px !important; text-transform: uppercase !important; font-weight: 700 !important; }
+        .nav-links li a:hover { color: var(--gold) !important; }
 
         /* --- WORK IN PROGRESS SECTION --- */
         .wip-container {

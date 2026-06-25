@@ -3,56 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You | Newman Exclusive</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Thank You | Newman Exclusive Bespoke Tailoring Bangkok</title>
+    <meta name="description" content="Thank you for your inquiry. Newman Exclusive will be in touch shortly to arrange your bespoke fitting in Bangkok.">
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        .thank-you-container {
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
+        :root { --gold: #d4af37; --navy: #1a263c; --dark-bg: #050b1a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; background: var(--dark-bg); color: #fff; min-height: 100vh; display: flex; flex-direction: column; }
+        header.main-header { background-color: var(--navy) !important; display: flex !important; justify-content: space-between !important; align-items: center !important; padding: 0 5% !important; min-height: 90px !important; height: auto !important; width: 100% !important; position: sticky; top: 0; z-index: 9999 !important; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+        .brand-identity { display: flex !important; align-items: center !important; gap: 15px !important; text-decoration: none !important; flex-shrink: 0 !important; }
+        .logo-area img { height: 65px !important; width: auto !important; display: block !important; }
+        .brand-name-fancy { font-family: 'Great Vibes', cursive !important; color: var(--gold) !important; font-size: 32px !important; white-space: nowrap !important; }
+        .nav-links { display: flex !important; list-style: none !important; gap: 20px !important; flex-wrap: nowrap !important; justify-content: flex-end !important; padding: 0 !important; margin: 0 !important; }
+        .nav-links li a { color: white !important; text-decoration: none !important; font-size: 11px !important; letter-spacing: 2px !important; text-transform: uppercase !important; font-weight: 700 !important; }
+        .nav-links li a:hover { color: var(--gold) !important; }
+        .ty-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 5%; }
+        .ty-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+        .ty-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 6vw, 72px); font-weight: 700; line-height: 1.1; color: #fff; margin-bottom: 24px; }
+        .ty-divider { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 28px; }
+        .ty-body { font-size: 16px; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto 48px; }
+        .ty-body strong { color: var(--gold); font-weight: 400; }
+        .ty-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+        .btn-primary { display: inline-block; padding: 14px 36px; background: transparent; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-primary:hover { background: var(--gold); color: var(--navy); }
+        .btn-secondary { display: inline-block; padding: 14px 36px; background: transparent; border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s; }
+        .btn-secondary:hover { border-color: #fff; color: #fff; }
+        .ty-whatsapp { margin-top: 48px; font-size: 13px; color: rgba(255,255,255,0.45); letter-spacing: 1px; }
+        .ty-whatsapp a { color: var(--gold); text-decoration: none; }
+        .ty-whatsapp a:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 24px 5%; font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 1px; border-top: 1px solid rgba(255,255,255,0.06); }
+        @media (max-width: 768px) {
+            header.main-header { flex-direction: column !important; padding: 15px 5% !important; min-height: auto !important; }
+            .nav-links { flex-wrap: wrap !important; justify-content: center !important; gap: 12px !important; padding: 10px 0 !important; }
         }
-        .thank-you-container h1 {
-            font-family: 'Playfair Display';
-            font-size: 54px;
-            color: #050b1a;
-            margin-bottom: 20px;
-        }
-        .thank-you-container p {
-            font-size: 18px;
-            color: #555;
-            max-width: 600px;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-        .back-home {
-            background: #050b1a;
-            color: #fff;
-            padding: 15px 40px;
-            text-decoration: none;
-            letter-spacing: 2px;
-            font-weight: 700;
-            text-transform: uppercase;
-            transition: background 0.3s;
-        }
-        .back-home:hover { background: #d4af37; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html"><img src="images/Final_Logos_(1).png" alt="Newman Exclusive" class="logo-img"></a>
-        </div>
+    <header class="main-header">
+        <a href="index.html" class="brand-identity">
+            <div class="logo-area"><img src="images/Final_Logos_(1).png" alt="Newman Exclusive Logo"></div>
+            <span class="brand-name-fancy">Newman Exclusive</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="fabrics.html">Fabrics</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="blogs.html">Journal</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <main class="thank-you-container">
-        <h1>Message Received.</h1>
-        <p>Thank you for reaching out to Newman Exclusive. A member of our tailoring team will review your inquiry and contact you within 24 hours to discuss your bespoke requirements.</p>
-        <a href="index.html" class="back-home">Return to Home</a>
+    <main class="ty-wrap">
+        <p class="ty-eyebrow">Newman Exclusive &mdash; Bangkok</p>
+        <h1 class="ty-title">Your Inquiry<br>Has Been Received.</h1>
+        <div class="ty-divider"></div>
+        <p class="ty-body">
+            Thank you for reaching out. <strong>Sam Khorana</strong> will be in touch within 24 hours to arrange your personal fitting at <strong>InterContinental Bangkok</strong>.<br><br>
+            We look forward to creating something extraordinary for you.
+        </p>
+        <div class="ty-actions">
+            <a href="services.html" class="btn-primary">Explore Our Services</a>
+            <a href="gallery.html" class="btn-secondary">View the Portfolio</a>
+        </div>
+        <p class="ty-whatsapp">
+            Need to reach us sooner?&nbsp;&nbsp;<a href="https://wa.me/66879163808" target="_blank">WhatsApp +66 87 916 3808</a>
+        </p>
     </main>
+    <footer>&copy; 2025 Newman Exclusive &mdash; InterContinental Bangkok, Unit L.16, 973 Phloen Chit Rd, Pathum Wan, Bangkok 10330</footer>
 </body>
 </html>
