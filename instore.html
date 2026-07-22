@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>In-Shop Deposit — Newman Exclusive</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root { --navy: #10233d; --gold: #b8925a; --cream: #faf7f2; --gray: #6b6b6b; --border: #e3ddd2; }
+  * { box-sizing: border-box; }
+  body { font-family: 'Georgia', serif; background: var(--cream); color: var(--navy); margin: 0; }
+  .wrap { max-width: 480px; margin: 0 auto; padding: 28px 20px 60px; }
+  header { text-align: center; margin-bottom: 24px; }
+  header h1 { font-size: 18px; letter-spacing: 1px; margin: 0 0 2px; }
+  header p { color: var(--gray); font-size: 12px; margin: 0; }
+  .card { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 22px; margin-bottom: 18px; }
+  label { display: block; font-size: 13px; margin: 12px 0 6px; }
+  input[type=text], input[type=number] {
+    width: 100%; padding: 10px 12px; border: 1px solid var(--border);
+    border-radius: 4px; font-size: 15px; font-family: inherit;
+  }
+  button {
+    width: 100%; padding: 13px; background: var(--navy); color: #fff; border: none;
+    border-radius: 4px; font-size: 14px; cursor: pointer; margin-top: 16px; font-family: inherit;
+  }
+  button.secondary { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
+  button:disabled { opacity: 0.5; }
+  #qrBox { text-align: center; padding: 10px 0; }
+  #qrAmount { font-size: 24px; margin: 8px 0; }
+  #qrContainer { display: inline-block; margin: 10px 0; }
+  .file-input { border: 1px dashed var(--border); border-radius: 4px; padding: 20px; text-align: center; cursor: pointer; font-size: 13px; color: var(--gray); }
+  #slipPreview { max-width: 100%; margin-top: 10px; border-radius: 4px; }
+  .hidden { display: none; }
+  .status-msg { text-align: center; font-size: 14px; padding: 14px; border-radius: 4px; }
+  .status-msg.success { background: #eaf6ec; color: #22633a; }
+  .status-msg.error { background: #fbeaea; color: #a3352b; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>NEWMAN EXCLUSIVE — Staff</h1>
+    <p>In-shop deposit collection</p>
+  </header>
+
+  <div class="card" id="stepEntry">
+    <label for="custName">Customer Name <span style="color:var(--gold);">*</span></label>
+    <input type="text" id="custName" placeholder="Full name" required>
+    <label for="custContact">Phone or LINE ID <span style="color:var(--gold);">*</span></label>
+    <div style="display:flex; gap:8px;">
+      <select id="countryCode" style="width:100px; flex-shrink:0; padding: 10px 8px; border: 1px solid var(--border); border-radius: 4px;">
+        <option value="+66" selected>🇹🇭 +66</option>
+        <option value="+1">🇺🇸 +1</option>
+        <option value="+44">🇬🇧 +44</option>
+        <option value="+65">🇸🇬 +65</option>
+        <option value="+60">🇲🇾 +60</option>
+        <option value="+81">🇯🇵 +81</option>
+        <option value="+82">🇰🇷 +82</option>
+        <option value="+61">🇦🇺 +61</option>
+        <option value="+971">🇦🇪 +971</option>
+        <option value="other">Other</option>
+      </select>
+      <input type="text" id="custContact" placeholder="Number or LINE ID" required style="flex:1;">
+    </div>
+    <label for="orderRef">Order ID <span style="color:var(--gold);">*</span></label>
+    <input type="text" id="orderRef" placeholder="e.g. NE-1042" required>
+    <label for="amount">Deposit Amount (THB) <span style="color:var(--gold);">*</span></label>
+    <input type="number" id="amount" placeholder="0.00" min="1" step="0.01" required>
+    <button id="btnGenerateQR">Generate QR for Customer</button>
+    <p id="qrError" style="color:#a3352b; font-size:12px; display:none;"></p>
+  </div>
+
+  <div class="card hidden" id="stepQR">
+    <div id="qrBox">
+      <div id="qrAmount"></div>
+      <div id="qrContainer"></div>
+      <p style="font-size:12px;color:var(--gray);text-align:center;">Show this to the customer to scan and pay.</p>
+    </div>
+    <button id="btnPaid">Payment Received — Attach Slip</button>
+    <button class="secondary" id="btnBack">Back</button>
+  </div>
+
+  <div class="card hidden" id="stepUpload">
+    <div class="file-input" id="fileDropArea">
+      Tap to take a photo of the transfer slip
+      <input type="file" id="slipFile" accept="image/*" capture="environment" class="hidden">
+    </div>
+    <img id="slipPreview" class="hidden">
+    <button id="btnSubmit" disabled>Save Transaction</button>
+  </div>
+
+  <div id="resultMsg"></div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/promptpay.js"></script>
+<script>
+  let selectedFile = null;
+
+  document.getElementById('btnGenerateQR').addEventListener('click', () => {
+    const errEl = document.getElementById('qrError');
+    errEl.style.display = 'none';
+
+    const name = document.getElementById('custName').value.trim();
+    const contact = document.getElementById('custContact').value.trim();
+    const orderRef = document.getElementById('orderRef').value.trim();
+    const amount = parseFloat(document.getElementById('amount').value);
+
+    if (!name) return alert('Enter the customer name.');
+    if (!contact) return alert('Enter a phone number or LINE ID.');
+    if (!orderRef) return alert('Enter the Order ID.');
+    if (!amount || amount <= 0) return alert('Enter a valid deposit amount.');
+
+    try {
+      if (typeof QRCode === 'undefined') {
+        throw new Error('QR library did not load — check your internet connection.');
+      }
+      if (typeof PROMPTPAY_ID === 'undefined' || !PROMPTPAY_ID) {
+        throw new Error('PROMPTPAY_ID is missing from config.js.');
+      }
+      document.getElementById('qrAmount').textContent = `฿${amount.toLocaleString(undefined, {minimumFractionDigits: 2})}`;
+      renderPromptPayQR(document.getElementById('qrContainer'), PROMPTPAY_ID, amount);
+      document.getElementById('stepEntry').classList.add('hidden');
+      document.getElementById('stepQR').classList.remove('hidden');
+    } catch (err) {
+      console.error('QR generation failed:', err);
+      errEl.textContent = 'Could not generate QR: ' + err.message;
+      errEl.style.display = 'block';
+    }
+  });
+
+  document.getElementById('btnBack').addEventListener('click', () => {
+    document.getElementById('stepQR').classList.add('hidden');
+    document.getElementById('stepEntry').classList.remove('hidden');
+  });
+
+  document.getElementById('btnPaid').addEventListener('click', () => {
+    document.getElementById('stepQR').classList.add('hidden');
+    document.getElementById('stepUpload').classList.remove('hidden');
+  });
+
+  const fileDropArea = document.getElementById('fileDropArea');
+  const slipFileInput = document.getElementById('slipFile');
+  fileDropArea.addEventListener('click', () => slipFileInput.click());
+  slipFileInput.addEventListener('change', (e) => {
+    selectedFile = e.target.files[0];
+    if (selectedFile) {
+      const preview = document.getElementById('slipPreview');
+      preview.src = URL.createObjectURL(selectedFile);
+      preview.classList.remove('hidden');
+      document.getElementById('btnSubmit').disabled = false;
+    }
+  });
+
+  document.getElementById('btnSubmit').addEventListener('click', async () => {
+    const btn = document.getElementById('btnSubmit');
+    btn.disabled = true;
+    btn.textContent = 'Saving...';
+
+    try {
+      const name = document.getElementById('custName').value.trim();
+      const countryCode = document.getElementById('countryCode').value;
+      const contactRaw = document.getElementById('custContact').value.trim();
+      const contact = (countryCode !== 'other') ? `${countryCode} ${contactRaw}` : contactRaw;
+      const orderRef = document.getElementById('orderRef').value.trim();
+      const amount = parseFloat(document.getElementById('amount').value);
+
+      const fileExt = selectedFile.name.split('.').pop();
+      const filePath = `${Date.now()}_${Math.random().toString(36).slice(2)}.${fileExt}`;
+
+      const { error: uploadError } = await supabaseClient
+        .storage.from('slips').upload(filePath, selectedFile);
+      if (uploadError) throw uploadError;
+
+      const { error: insertError } = await supabaseClient
+        .from('transactions')
+        .insert({
+          customer_name: name,
+          customer_contact: contact,
+          order_reference: orderRef,
+          transaction_type: 'instore_deposit',
+          amount: amount,
+          slip_image_path: filePath,
+          status: 'pending'
+        });
+      if (insertError) throw insertError;
+
+      document.getElementById('stepUpload').classList.add('hidden');
+      document.getElementById('resultMsg').innerHTML =
+        '<div class="status-msg success">Saved. Transaction logged for verification.</div>';
+    } catch (err) {
+      console.error(err);
+      document.getElementById('resultMsg').innerHTML =
+        '<div class="status-msg error">Error saving transaction. Please try again.</div>';
+      btn.disabled = false;
+      btn.textContent = 'Save Transaction';
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transactions Admin — Newman Exclusive</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root { --navy: #10233d; --gold: #b8925a; --cream: #faf7f2; --gray: #6b6b6b; --border: #e3ddd2; }
+  * { box-sizing: border-box; }
+  body { font-family: 'Georgia', serif; background: var(--cream); color: var(--navy); margin: 0; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 28px 20px 60px; }
+  header { text-align: center; margin-bottom: 24px; }
+  header h1 { font-size: 20px; letter-spacing: 1px; margin: 0 0 2px; }
+  .card { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 22px; margin-bottom: 18px; }
+  label { display: block; font-size: 13px; margin: 12px 0 6px; }
+  input { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 4px; font-size: 15px; font-family: inherit; }
+  button { padding: 10px 16px; background: var(--navy); color: #fff; border: none; border-radius: 4px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  button.small { padding: 6px 10px; font-size: 12px; }
+  button.confirm { background: #22633a; }
+  button.reject { background: #a3352b; }
+  button.secondary { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
+  .hidden { display: none; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--gold); text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; }
+  .badge { padding: 3px 8px; border-radius: 10px; font-size: 11px; }
+  .badge.pending { background: #fbf3e8; color: var(--gold); }
+  .badge.confirmed { background: #eaf6ec; color: #22633a; }
+  .badge.rejected { background: #fbeaea; color: #a3352b; }
+  .slip-link { color: var(--navy); text-decoration: underline; cursor: pointer; font-size: 12px; }
+  .filters { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+  .filters button { background: transparent; color: var(--navy); border: 1px solid var(--border); }
+  .filters button.active { background: var(--navy); color: #fff; }
+  #topBar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 10; }
+  .modal { background: #fff; padding: 16px; border-radius: 6px; max-width: 90vw; max-height: 90vh; }
+  .modal img { max-width: 100%; max-height: 70vh; display: block; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>NEWMAN EXCLUSIVE — Transactions</h1>
+  </header>
+
+  <!-- LOGIN -->
+  <div class="card" id="loginCard">
+    <label for="loginEmail">Staff Email</label>
+    <input type="text" id="loginEmail">
+    <label for="loginPassword">Password</label>
+    <input type="password" id="loginPassword">
+    <button id="btnLogin" style="margin-top:16px;width:100%;">Log In</button>
+    <p id="loginError" style="color:#a3352b;font-size:12px;"></p>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="hidden" id="dashboard">
+    <div id="topBar">
+      <div class="filters" id="filterBar">
+        <button data-status="all" class="active">All</button>
+        <button data-status="pending">Pending</button>
+        <button data-status="confirmed">Confirmed</button>
+        <button data-status="rejected">Rejected</button>
+      </div>
+      <button class="secondary small" id="btnLogout">Log Out</button>
+    </div>
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th><th>Customer</th><th>Order ID</th><th>Type</th>
+            <th>Amount</th><th>Slip</th><th>Status</th><th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="txBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="slipModalContainer"></div>
+</div>
+
+<script src="js/config.js"></script>
+<script>
+  let currentFilter = 'all';
+
+  async function checkSession() {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (session) {
+      document.getElementById('loginCard').classList.add('hidden');
+      document.getElementById('dashboard').classList.remove('hidden');
+      loadTransactions();
+    }
+  }
+
+  document.getElementById('btnLogin').addEventListener('click', async () => {
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value;
+    const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+    if (error) {
+      document.getElementById('loginError').textContent = error.message;
+      return;
+    }
+    document.getElementById('loginCard').classList.add('hidden');
+    document.getElementById('dashboard').classList.remove('hidden');
+    loadTransactions();
+  });
+
+  document.getElementById('btnLogout').addEventListener('click', async () => {
+    await supabaseClient.auth.signOut();
+    location.reload();
+  });
+
+  document.querySelectorAll('#filterBar button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#filterBar button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.status;
+      loadTransactions();
+    });
+  });
+
+  async function loadTransactions() {
+    let query = supabaseClient.from('transactions').select('*').order('created_at', { ascending: false });
+    if (currentFilter !== 'all') query = query.eq('status', currentFilter);
+    const { data, error } = await query;
+    const tbody = document.getElementById('txBody');
+    tbody.innerHTML = '';
+    if (error) {
+      tbody.innerHTML = `<tr><td colspan="8">Error loading: ${error.message}</td></tr>`;
+      return;
+    }
+    for (const tx of data) {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${new Date(tx.created_at).toLocaleString()}</td>
+        <td>${tx.customer_name}<br><span style="color:#888;font-size:11px;">${tx.customer_contact || ''}</span></td>
+        <td>${tx.order_reference || '—'}</td>
+        <td>${tx.transaction_type.replace('_', ' ')}</td>
+        <td>฿${Number(tx.amount).toLocaleString(undefined, {minimumFractionDigits:2})}</td>
+        <td>${tx.slip_image_path ? `<span class="slip-link" data-path="${tx.slip_image_path}">View slip</span>` : '—'}</td>
+        <td><span class="badge ${tx.status}">${tx.status}</span></td>
+        <td>
+          ${tx.status === 'pending' ? `
+            <button class="small confirm" data-id="${tx.id}" data-action="confirmed">Confirm</button>
+            <button class="small reject" data-id="${tx.id}" data-action="rejected">Reject</button>
+          ` : '—'}
+        </td>
+      `;
+      tbody.appendChild(tr);
+    }
+
+    tbody.querySelectorAll('.slip-link').forEach(el => {
+      el.addEventListener('click', () => showSlip(el.dataset.path));
+    });
+    tbody.querySelectorAll('button[data-action]').forEach(btn => {
+      btn.addEventListener('click', () => updateStatus(btn.dataset.id, btn.dataset.action));
+    });
+  }
+
+  async function showSlip(path) {
+    const { data, error } = await supabaseClient.storage.from('slips').createSignedUrl(path, 300);
+    if (error) return alert('Could not load slip image.');
+    document.getElementById('slipModalContainer').innerHTML = `
+      <div class="modal-bg" id="modalBg">
+        <div class="modal">
+          <img src="${data.signedUrl}">
+          <button class="secondary" id="btnCloseModal">Close</button>
+        </div>
+      </div>`;
+    document.getElementById('btnCloseModal').addEventListener('click', () => {
+      document.getElementById('slipModalContainer').innerHTML = '';
+    });
+    document.getElementById('modalBg').addEventListener('click', (e) => {
+      if (e.target.id === 'modalBg') document.getElementById('slipModalContainer').innerHTML = '';
+    });
+  }
+
+  async function updateStatus(id, status) {
+    const { data: { user } } = await supabaseClient.auth.getUser();
+    const { error } = await supabaseClient
+      .from('transactions')
+      .update({ status, verified_by: user?.email, verified_at: new Date().toISOString() })
+      .eq('id', id);
+    if (error) return alert('Error updating: ' + error.message);
+    loadTransactions();
+  }
+
+  checkSession();
+</script>
+</body>
+</html>
