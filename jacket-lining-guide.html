@@ -1,77 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bespoke Jacket Lining Guide | Newman Exclusive</title>
-  <meta name="description" content="Full lined vs. half lined vs. summer vs. winter jackets — a complete guide to bespoke jacket construction from Newman Exclusive Bangkok." />
-  <link rel="stylesheet" href="style.css" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18267167145"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18267167145');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bespoke Jacket Lining Guide | Newman Exclusive</title>
+    <meta name="description" content="Full lined vs. half lined vs. summer vs. winter jackets — a complete guide to bespoke jacket construction from Newman Exclusive Bangkok.">
+    <link rel="canonical" href="https://www.newmanexclusive.com/jacket-lining-guide.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #d4af37;
+            --navy: #1a263c;
+            --white: #ffffff;
+            --dark-bg: #050b1a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; background: var(--dark-bg); color: var(--white); overflow-x: hidden; }
+
+        /* --- HEADER --- */
+        header.main-header {
+            background-color: var(--navy);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            min-height: 90px;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .brand-identity { display: flex; align-items: center; gap: 15px; text-decoration: none; flex-shrink: 0; }
+        .logo-area img { height: 65px; width: auto; display: block; }
+        .brand-name-fancy { font-family: 'Great Vibes', cursive; color: var(--gold); font-size: 32px; white-space: nowrap; }
+        nav { display: flex; align-items: center; }
+        .nav-links { display: flex; list-style: none; gap: 20px; flex-wrap: nowrap; justify-content: flex-end; padding: 0; margin: 0; }
+        .nav-links li a { color: white; text-decoration: none; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; transition: color 0.3s; }
+        .nav-links li a:hover { color: var(--gold); }
+
+        /* --- HERO --- */
+        .post-hero {
+            height: 55vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            padding: 60px 10%;
+            background: linear-gradient(to top, rgba(5,11,26,1) 0%, rgba(5,11,26,0.4) 60%, rgba(5,11,26,0.1) 100%),
+                        url('images/lining-thumb.jpg') center/cover no-repeat;
+        }
+        .post-hero .post-category {
+            color: var(--gold);
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .post-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4vw, 52px);
+            line-height: 1.2;
+            max-width: 750px;
+            color: var(--white);
+        }
+
+        /* --- ARTICLE BODY --- */
+        .post-body {
+            max-width: 780px;
+            margin: 70px auto;
+            padding: 0 5%;
+        }
+        .post-body p {
+            font-size: 17px;
+            line-height: 1.85;
+            font-weight: 300;
+            opacity: 0.85;
+            margin-bottom: 25px;
+        }
+        .post-body h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--gold);
+            margin: 50px 0 15px;
+        }
+        .post-body blockquote {
+            border-left: 3px solid var(--gold);
+            padding: 20px 30px;
+            margin: 40px 0;
+            background: rgba(212, 175, 55, 0.05);
+            font-style: italic;
+            font-size: 18px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        /* --- CTA --- */
+        .post-cta {
+            background: var(--navy);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 50px 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+        .post-cta h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        .post-cta .btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 15px 40px;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        .post-cta .btn:hover { opacity: 0.85; }
+
+        /* --- BACK LINK --- */
+        .back-link {
+            display: inline-block;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 80px;
+            transition: opacity 0.3s;
+        }
+        .back-link:hover { opacity: 0.7; }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        footer p {
+            color: var(--gold);
+            letter-spacing: 3px;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 1024px) {
+            header.main-header { flex-direction: column; padding: 15px 5%; min-height: auto; }
+            .brand-identity { margin-bottom: 5px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px 15px; padding: 5px 0; }
+            .post-hero { padding: 40px 5%; }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- NAV (match your existing site nav exactly) -->
-  <nav>
-    <a href="index.html">
-      <img src="images/Final_Logos_(1).png" alt="Newman Exclusive" />
-    </a>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="fabrics.html">Fabrics</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="process.html">Process</a></li>
-      <li><a href="blogs.html">Journal</a></li>
-      <li><a href="payment.html">Payment</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    <header class="main-header">
+        <a href="index.html" class="brand-identity">
+            <div class="logo-area"><img src="images/Final_Logos_(1).png" alt="Newman Exclusive Logo"></div>
+            <span class="brand-name-fancy">Newman Exclusive</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="fabrics.html">Fabrics</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="blogs.html">Journal</a></li>
+                <li><a href="payment.html">Payment</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- BLOG POST -->
-  <article class="journal-post">
+    <main>
 
-    <p class="post-category">Style Guide &amp; Tailoring Insight</p>
-    <h1>Bespoke Jacket Lining Guide: Full Lined vs. Half Lined vs. Summer vs. Winter</h1>
+        <section class="post-hero">
+            <span class="post-category">Style Guide &amp; Tailoring Insight</span>
+            <h1>Bespoke Jacket Lining Guide: Full Lined vs. Half Lined vs. Summer vs. Winter</h1>
+        </section>
 
-    <p>Choosing the right custom jacket goes beyond just picking a fabric. Understanding the internal construction — how a jacket is lined — makes all the difference for your comfort, style, and climate.</p>
-    <p>Here is a breakdown of the differences to help you select the ideal custom garment for your wardrobe.</p>
+        <div class="post-body">
 
-    <h2>Full Lined Jackets</h2>
-    <p>The traditional standard for bespoke tailoring. The interior is completely covered with a lining fabric, giving the jacket structure, weight, and a smooth glide over shirts. Ideal for cooler weather and air-conditioned offices.</p>
+            <p>Choosing the right custom jacket goes beyond just picking a fabric. Understanding the internal construction — how a jacket is lined — makes all the difference for your comfort, style, and climate.</p>
+            <p>Here is a breakdown of the differences to help you select the ideal custom garment for your wardrobe.</p>
 
-    <h2>Half Lined Jackets</h2>
-    <p>Features lining only across the upper back and shoulders, leaving the lower interior seams exposed. This maximizes breathability and flexibility without losing structural shape in the shoulders.</p>
+            <h2>Full Lined Jackets</h2>
+            <p>The traditional standard for bespoke tailoring. The interior is completely covered with a lining fabric, giving the jacket structure, weight, and a smooth glide over shirts. Ideal for cooler weather and air-conditioned offices.</p>
 
-    <h2>Summer Lightweight "Summer Breeze" Jackets</h2>
-    <p>Crafted from open-weave, highly breathable fabrics like linen, tropical wool, or cotton. Often half lined or completely unlined to maximize airflow and keep you cool in high temperatures.</p>
+            <h2>Half Lined Jackets</h2>
+            <p>Features lining only across the upper back and shoulders, leaving the lower interior seams exposed. This maximizes breathability and flexibility without losing structural shape in the shoulders.</p>
 
-    <h2>Winter Jackets</h2>
-    <p>Constructed from heavier, dense cloths such as tweed, flannel, or cashmere blends, paired with a full lining to trap heat and block cold winds.</p>
+            <h2>Summer Lightweight "Summer Breeze" Jackets</h2>
+            <p>Crafted from open-weave, highly breathable fabrics like linen, tropical wool, or cotton. Often half lined or completely unlined to maximize airflow and keep you cool in high temperatures.</p>
 
-    <h2>Why Do Half Lined Jackets Cost More?</h2>
-    <p>It sounds counterintuitive: less material should mean a lower price, right?</p>
-    <p>In bespoke tailoring, the opposite is often true. Because a half lined jacket leaves the interior seams entirely exposed, tailoring precision is everything.</p>
-    <p>Without a lining to hide the inner workings, master tailors must spend significantly more time ensuring absolute perfection. Every single internal seam is meticulously bound or piped, and raw edges are hand-tacked. This intensive hand-craftsmanship increases labor time considerably, resulting in a superior, lightweight piece of art.</p>
+            <h2>Winter Jackets</h2>
+            <p>Constructed from heavier, dense cloths such as tweed, flannel, or cashmere blends, paired with a full lining to trap heat and block cold winds.</p>
 
-    <h2>Which Jacket Style is Right for You?</h2>
-    <p>With custom tailoring at Newman Exclusive, you have endless options to customize your wardrobe for any season or climate.</p>
-    <p>Ready to design your next bespoke suit or jacket? <a href="https://www.newmanexclusive.com">Visit Newman Exclusive</a> to explore our fabrics and start your custom journey.</p>
-    <p>Need expert styling advice? Feel free to <a href="https://wa.me/66879163808">WhatsApp us directly at +66 87 916 3808</a> for a free consultation with our master tailors!</p>
+            <h2>Why Do Half Lined Jackets Cost More?</h2>
+            <p>It sounds counterintuitive: less material should mean a lower price, right?</p>
+            <p>In bespoke tailoring, the opposite is often true. Because a half lined jacket leaves the interior seams entirely exposed, tailoring precision is everything.</p>
+            <p>Without a lining to hide the inner workings, master tailors must spend significantly more time ensuring absolute perfection. Every single internal seam is meticulously bound or piped, and raw edges are hand-tacked. This intensive hand-craftsmanship increases labor time considerably, resulting in a superior, lightweight piece of art.</p>
 
-    <blockquote>"True craftsmanship is not just what you see — it is what you feel when you slip on a jacket built entirely for you."</blockquote>
+            <blockquote>"True craftsmanship is not just what you see — it is what you feel when you slip on a jacket built entirely for you."</blockquote>
 
-    <div class="post-cta">
-      <h3>Design Your Perfect Jacket</h3>
-      <a href="contact.html" class="btn">Consult Our Master Tailor</a>
-    </div>
+            <h2>Which Jacket Style is Right for You?</h2>
+            <p>With custom tailoring at Newman Exclusive, you have endless options to customize your wardrobe for any season or climate.</p>
+            <p>Ready to design your next bespoke suit or jacket? Visit Newman Exclusive to explore our fabrics and start your custom journey.</p>
+            <p>Need expert styling advice? Feel free to <a href="https://wa.me/66879163808" style="color: var(--gold);">WhatsApp us directly at +66 87 916 3808</a> for a free consultation with our master tailors!</p>
 
-    <a href="blogs.html" class="back-link">← Back to Journal</a>
+            <div class="post-cta">
+                <h3>Design Your Perfect Jacket</h3>
+                <a href="contact.html" class="btn">Consult Our Master Tailor</a>
+            </div>
 
-  </article>
+            <a href="blogs.html" class="back-link">← Back to Journal</a>
 
-  <footer>
-    <p>© 2026 NEWMAN EXCLUSIVE | THE PINNACLE OF BANGKOK TAILORING</p>
-  </footer>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Newman Exclusive | The Pinnacle of Bangkok Tailoring</p>
+    </footer>
 
 </body>
 </html>
