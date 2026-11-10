@@ -78,6 +78,45 @@
         .luxury-form input, .luxury-form select, .luxury-form textarea { width: 100%; padding: 12px 0; margin-bottom: 35px; border: none; border-bottom: 1px solid #ddd; font-family: 'Roboto'; font-size: 16px; outline: none; }
         .submit-btn { background: #050b1a; color: #fff; padding: 20px 60px; border: none; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; cursor: pointer; width: 100%; transition: 0.3s; }
         .submit-btn:hover { background: var(--gold); }
+        .submit-btn:disabled { opacity: 0.6; cursor: wait; }
+
+        /* --- PATH SELECTOR (Visit / Virtual / Trunk Show) --- */
+        .panel-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+        .path-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 45px; }
+        .path-option { background: #fff; border: 1px solid #e6e6e6; padding: 18px 14px; text-align: left; cursor: pointer; font-family: 'Roboto'; transition: border-color 0.2s, background 0.2s; }
+        .path-option:hover { border-color: var(--gold); }
+        .path-option .po-title { display: block; font-family: 'Playfair Display'; font-size: 16px; color: var(--dark-bg); margin-bottom: 6px; }
+        .path-option .po-sub { display: block; font-size: 12px; line-height: 1.45; color: #777; }
+        .path-option[aria-selected="true"] { border-color: var(--navy); background: var(--navy); }
+        .path-option[aria-selected="true"] .po-title { color: var(--gold); }
+        .path-option[aria-selected="true"] .po-sub { color: rgba(255,255,255,0.75); }
+        .path-option:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+        .form-pane[hidden] { display: none; }
+        .form-pane h3 { font-family: 'Playfair Display'; font-size: 28px; margin-bottom: 12px; color: var(--dark-bg); }
+        .form-intro { font-size: 15px; line-height: 1.6; color: #555; margin-bottom: 35px; }
+
+        .luxury-form .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+        .luxury-form .optional { font-weight: 400; letter-spacing: 0.5px; text-transform: none; color: #aaa; }
+        .luxury-form fieldset { border: none; margin: 0 0 35px; padding: 0; }
+        .luxury-form legend { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 12px; color: #888; text-transform: uppercase; }
+        .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; }
+        .luxury-form .check-label { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; font-weight: 400; letter-spacing: 0; text-transform: none; color: #333; margin: 0; cursor: pointer; }
+        .luxury-form .check-label input { width: 16px; height: 16px; margin: 2px 0 0; padding: 0; flex-shrink: 0; accent-color: var(--navy); }
+        .consent { margin-bottom: 35px; }
+        .consent .check-label { font-size: 13px; color: #666; line-height: 1.5; }
+
+        /* honeypot: hidden from people, visible to bots */
+        .hp-field { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
+
+        .form-status { margin-top: 18px; font-size: 14px; line-height: 1.5; color: #b3261e; min-height: 1em; }
+        .form-success { border-left: 3px solid var(--gold); background: #fbf8ef; padding: 24px 26px; }
+        .form-success h4 { font-family: 'Playfair Display'; font-size: 22px; color: var(--dark-bg); margin-bottom: 8px; }
+        .form-success p { font-size: 15px; line-height: 1.6; color: #555; }
+        .form-success a { color: var(--navy); font-weight: 700; }
+        .booking-embed { margin-top: 28px; }
+        .booking-embed iframe { width: 100%; height: 640px; border: 1px solid #eee; background: #fff; }
+        .booking-embed .booking-fallback { display: inline-block; margin-top: 10px; font-size: 13px; color: var(--navy); }
 
         @media (max-width: 1024px) {
             header.main-header { flex-direction: column; padding: 15px 5%; min-height: auto; }
@@ -85,6 +124,12 @@
             .nav-links { flex-wrap: wrap; justify-content: center; gap: 10px 15px; padding: 5px 0; }
 
             .contact-info-panel, .contact-form-panel { min-width: 100%; padding: 40px 20px; }
+        }
+        @media (max-width: 600px) {
+            .path-options { grid-template-columns: 1fr; }
+            .luxury-form .field-row, .check-grid { grid-template-columns: 1fr; }
+            .info-header h2 { font-size: 36px; }
+            .booking-embed iframe { height: 720px; }
         }
     </style>
 
@@ -172,20 +217,124 @@
         </section>
 
         <section class="contact-form-panel">
-            <h3 style="font-family: 'Playfair Display'; font-size: 28px; margin-bottom: 40px;">DIRECT INQUIRY</h3>
-            <form id="contactForm" class="luxury-form">
-                <label for="name">Full Name</label><input type="text" id="name" name="name" required>
-                <label for="email">Email</label><input type="email" id="email" name="_replyto" required>
-                <label for="phone">Phone / WhatsApp</label><input type="tel" id="phone" name="phone" required>
-                <label for="service">Service</label>
-                <select id="service" name="service" required>
-                    <option value="Business Suit">Business Suit</option>
-                    <option value="Wedding Tuxedo">Wedding Tuxedo</option>
-                    <option value="Other">Other Inquiry</option>
-                </select>
-                <label for="message">Message</label><textarea id="message" name="message" rows="4" required></textarea>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+            <p class="panel-eyebrow">How would you like to begin?</p>
+            <div class="path-options" role="tablist" aria-label="Ways to contact us">
+                <button type="button" class="path-option" role="tab" id="tab-inquiry" aria-controls="pane-inquiry" aria-selected="true" data-path="inquiry">
+                    <span class="po-title">Visit in Bangkok</span>
+                    <span class="po-sub">Send an inquiry or arrange a fitting at our InterContinental shop.</span>
+                </button>
+                <button type="button" class="path-option" role="tab" id="tab-virtual" aria-controls="pane-virtual" aria-selected="false" data-path="virtual">
+                    <span class="po-title">Virtual Consultation</span>
+                    <span class="po-sub">A first consultation by video, wherever you are in the world.</span>
+                </button>
+                <button type="button" class="path-option" role="tab" id="tab-trunk-show" aria-controls="pane-trunk-show" aria-selected="false" data-path="trunk-show">
+                    <span class="po-title">Trunk Show Interest</span>
+                    <span class="po-sub">Tell us your city and we'll email you when we travel near you.</span>
+                </button>
+            </div>
+
+            <!-- 1. DIRECT INQUIRY -->
+            <div class="form-pane" id="pane-inquiry" role="tabpanel" aria-labelledby="tab-inquiry">
+                <h3>Direct Inquiry</h3>
+                <p class="form-intro">Planning a visit to Bangkok? Tell us what you have in mind and we'll reply by email or WhatsApp.</p>
+                <form id="contactForm" class="luxury-form nx-form" data-form-type="inquiry" data-success-redirect="thank-you.html" novalidate>
+                    <label for="name">Full Name</label><input type="text" id="name" name="name" autocomplete="name" required>
+                    <label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required>
+                    <label for="phone">Phone / WhatsApp</label><input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+1 555 123 4567" required>
+                    <label for="service">Service</label>
+                    <select id="service" name="service" required>
+                        <option value="Business Suit">Business Suit</option>
+                        <option value="Wedding Tuxedo">Wedding Tuxedo</option>
+                        <option value="Shirts">Shirts</option>
+                        <option value="Other">Other Inquiry</option>
+                    </select>
+                    <label for="message">Message</label><textarea id="message" name="message" rows="4" required></textarea>
+                    <div class="hp-field" aria-hidden="true"><label>Leave this empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    <p class="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <!-- 2. VIRTUAL CONSULTATION -->
+            <div class="form-pane" id="pane-virtual" role="tabpanel" aria-labelledby="tab-virtual" hidden>
+                <h3>Virtual Consultation</h3>
+                <p class="form-intro">Not in Bangkok and no trunk show nearby? Start with a complimentary video consultation. We'll talk through style, fabrics, and how we take your measurements remotely.</p>
+                <form id="virtualForm" class="luxury-form nx-form" data-form-type="virtual_consultation" novalidate>
+                    <label for="v-name">Full Name</label><input type="text" id="v-name" name="name" autocomplete="name" required>
+                    <label for="v-email">Email</label><input type="email" id="v-email" name="email" autocomplete="email" required>
+                    <div class="field-row">
+                        <div><label for="v-phone">Phone / WhatsApp</label><input type="tel" id="v-phone" name="phone" autocomplete="tel" placeholder="+1 555 123 4567" required></div>
+                        <div><label for="v-country">Country</label><input type="text" id="v-country" name="country" autocomplete="country-name" required></div>
+                    </div>
+                    <label for="v-platform">Preferred Video Platform</label>
+                    <select id="v-platform" name="video_platform" required>
+                        <option value="Google Meet">Google Meet</option>
+                        <option value="Zoom">Zoom</option>
+                        <option value="WhatsApp Video">WhatsApp Video</option>
+                        <option value="FaceTime">FaceTime</option>
+                    </select>
+                    <fieldset>
+                        <legend>What are you interested in?</legend>
+                        <div class="check-grid">
+                            <label class="check-label"><input type="checkbox" name="interests" value="Business Suit"> Business Suit</label>
+                            <label class="check-label"><input type="checkbox" name="interests" value="Wedding / Tuxedo"> Wedding / Tuxedo</label>
+                            <label class="check-label"><input type="checkbox" name="interests" value="Shirts"> Shirts</label>
+                            <label class="check-label"><input type="checkbox" name="interests" value="Trousers"> Trousers</label>
+                            <label class="check-label"><input type="checkbox" name="interests" value="Overcoat / Outerwear"> Overcoat / Outerwear</label>
+                            <label class="check-label"><input type="checkbox" name="interests" value="Not sure yet"> Not sure yet</label>
+                        </div>
+                    </fieldset>
+                    <label for="v-times">Days &amp; times that suit you <span class="optional">(in your local time)</span></label>
+                    <input type="text" id="v-times" name="preferred_times" placeholder="e.g. weekday evenings, Saturday mornings">
+                    <label for="v-message">Anything else? <span class="optional">(optional)</span></label>
+                    <textarea id="v-message" name="message" rows="3" placeholder="An event date, a style you love, questions…"></textarea>
+                    <input type="hidden" name="timezone">
+                    <div class="hp-field" aria-hidden="true"><label>Leave this empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+                    <button type="submit" class="submit-btn">Request Consultation</button>
+                    <p class="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <!-- 3. TRUNK SHOW INTEREST -->
+            <div class="form-pane" id="pane-trunk-show" role="tabpanel" aria-labelledby="tab-trunk-show" hidden>
+                <h3>Trunk Show Interest</h3>
+                <p class="form-intro">Our master tailor travels to meet clients in person. Tell us where you are and we'll let you know by email when we're planning a visit near you.</p>
+                <form id="trunkShowForm" class="luxury-form nx-form" data-form-type="trunk_show_interest" novalidate>
+                    <label for="t-name">Full Name</label><input type="text" id="t-name" name="name" autocomplete="name" required>
+                    <label for="t-email">Email</label><input type="email" id="t-email" name="email" autocomplete="email" required>
+                    <label for="t-phone">Phone / WhatsApp</label><input type="tel" id="t-phone" name="phone" autocomplete="tel" placeholder="+65 9123 4567" required>
+                    <div class="field-row">
+                        <div><label for="t-city">City</label><input type="text" id="t-city" name="city" autocomplete="address-level2" required></div>
+                        <div><label for="t-country">Country</label><input type="text" id="t-country" name="country" autocomplete="country-name" required></div>
+                    </div>
+                    <label for="t-timeframe">When are you hoping to be fitted?</label>
+                    <select id="t-timeframe" name="timeframe" required>
+                        <option value="Within 3 months">Within 3 months</option>
+                        <option value="3–6 months">3–6 months</option>
+                        <option value="6+ months">6+ months</option>
+                        <option value="Flexible">Flexible / just browsing</option>
+                    </select>
+                    <fieldset>
+                        <legend>What are you interested in?</legend>
+                        <div class="check-grid">
+                            <label class="check-label"><input type="checkbox" name="interests" value="Business Suit"> Business Suit</label>
+                            <label class="check-label"><input type="checkbox" name="interests" value="Wedding / Tuxedo"> Wedding / Tuxedo</label>
+                            <label class="check-label"><input type="checkbox" name="interests" value="Shirts"> Shirts</label>
+                            <label class="check-label"><input type="checkbox" name="interests" value="Trousers"> Trousers</label>
+                            <label class="check-label"><input type="checkbox" name="interests" value="Overcoat / Outerwear"> Overcoat / Outerwear</label>
+                            <label class="check-label"><input type="checkbox" name="interests" value="Group order"> Group order (e.g. wedding party)</label>
+                        </div>
+                    </fieldset>
+                    <label for="t-message">Anything else? <span class="optional">(optional)</span></label>
+                    <textarea id="t-message" name="message" rows="3"></textarea>
+                    <div class="consent">
+                        <label class="check-label"><input type="checkbox" name="email_consent" value="yes" required> Yes, email me about Newman Exclusive trunk shows near my city. You can unsubscribe at any time.</label>
+                    </div>
+                    <div class="hp-field" aria-hidden="true"><label>Leave this empty<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
+                    <button type="submit" class="submit-btn">Notify Me</button>
+                    <p class="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
         </section>
     </main>
 
@@ -194,28 +343,7 @@
     </footer>
 
 
-    <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        var form = this;
-        var btn = form.querySelector('button[type="submit"], input[type="submit"]');
-        if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
-        fetch('https://formspree.io/f/mqeezwan', {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-        }).then(function(res) {
-            if (res.ok) {
-                window.location.href = 'https://www.newmanexclusive.com/thank-you.html';
-            } else {
-                if (btn) { btn.disabled = false; btn.textContent = 'Send Inquiry'; }
-                alert('Something went wrong. Please try again or WhatsApp us directly.');
-            }
-        }).catch(function() {
-            if (btn) { btn.disabled = false; btn.textContent = 'Send Inquiry'; }
-            alert('Something went wrong. Please try again or WhatsApp us directly.');
-        });
-    });
-    </script>
+    <script src="js/forms-config.js"></script>
+    <script src="js/forms.js"></script>
 </body>
 </html>
