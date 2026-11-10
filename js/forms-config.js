@@ -4,7 +4,7 @@
  */
 window.NX_FORMS = {
   // 1) Google Apps Script web app URL (ends in /exec). Primary: writes to the Google Sheet + emails the team.
-  SHEET_ENDPOINT: '',
+  SHEET_ENDPOINT: 'https://script.google.com/macros/s/AKfycbx5KslZQmOQZEG7r2Ka-EXwgg6zOntMrpjfgFR9XVQRLVK_iBhqXAMxO6V4loNEByOphw/exec',
 
   // 2) Supabase backup copy of every submission (table created by supabase-leads.sql).
   SUPABASE_URL: 'https://ghafvssbyniuhzqghtra.supabase.co',
